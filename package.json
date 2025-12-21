@@ -31,7 +31,7 @@
     "three-globe": "^2.45.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^18.x",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-lottie": "^1.2.10",
