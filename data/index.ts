@@ -19,7 +19,7 @@ export const gridItems = [
   {
   
   id: 2,
-  title: "I'm very flexible with time zone communications",
+  title: "Console.log(Thoughts)",
   description: "",
   className:
     "lg:col-span-2 md:col-span-3 md:row-span-2 text-white overlapping-none",
@@ -222,4 +222,14 @@ export const socialMedia = [
     id: 3,
     img: "/link.svg",
   },
+];
+
+export const devQuotes = [
+  "Code is poetry written for machines, read by humans.",
+  "First make it work, then make it right, then make it fast.",
+  "A bug is just a feature waiting for documentation.",
+  "Programming is thinking, not typing.",
+  "Clean code always looks like it was written by someone who cares.",
+  "Simplicity is the soul of efficient code.",
+  "Your future self is your most important user."
 ];

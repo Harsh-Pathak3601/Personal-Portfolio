@@ -20,13 +20,13 @@ import { FaFilePdf } from "react-icons/fa";
 
 
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
+
 
 import { cn } from "@/lib/utils";
 
 
 import { BackgroundGradientAnimation } from "@/components/ui/GradientBg";
-import GridGlobe from "@/components/ui/GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "@/components/ui/MagicButton";
 
@@ -219,10 +219,10 @@ export const BentoGridItem = ({
 )}
 
 
-          {/* for the github 3d globe */}
+          {/* for random */}
           { id === 2 && (
   <div className="mt-10 flex justify-center ">
-    <GridGlobe />
+  
   </div>
 )}
 
@@ -275,29 +275,28 @@ export const BentoGridItem = ({
 )}
 
 
-          {id === 6 && (
-            <div className="mt-5 relative">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
-              >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+        { id === 6 && (
+  <div className="mt-5 relative">
+    {copied && (
+      <div className="absolute -bottom-5 right-0 pointer-events-none">
+        <Lottie
+          animationData={animationData}
+          loop={false}
+          style={{ width: 400, height: 200 }}
+        />
+      </div>
+    )}
 
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
-            </div>
-          )}
+    <MagicButton
+      title={copied ? "Email is Copied!" : "Copy my email address"}
+      icon={<IoCopyOutline />}
+      position="left"
+      handleClick={handleCopy}
+      otherClasses="!bg-[#161A31]"
+    />
+  </div>
+)}
+
         </div>
       </div>
     </div>
