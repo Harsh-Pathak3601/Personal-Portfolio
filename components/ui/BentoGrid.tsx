@@ -215,15 +215,14 @@ export const BentoGridItem = ({
        <div
   className={cn(
     "font-sans text-lg lg:text-3xl max-w-96 font-bold z-10",
-   id === 5 &&
-`absolute top-2 sm:top-1 md:top-6
+  id === 5 &&
+`absolute top-0 sm:-top-1 md:top-4
  left-1/2 -translate-x-1/2
  text-center
- text-base sm:text-lg lg:text-3xl
- max-w-96 font-bold
- bg-[#04071d]
+ text-sm sm:text-lg lg:text-3xl
+ font-bold
+ whitespace-nowrap
  px-4
- rounded-md
  z-20`
 
   )}
