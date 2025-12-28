@@ -3,17 +3,38 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
-import {
-  SiJavascript,
-  SiReact,
-  SiThreedotjs,
-  SiGreensock,
-  SiFramer,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiGit,
-  SiVite,
-} from "react-icons/si";
+const skillIcons = {
+  JavaScript:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  React:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "Node.js":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  Express:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  MongoDB:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  PostgreSQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  Python:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  Docker:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  Git:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  "Tailwind CSS":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  Redux:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+  AWS:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+  GraphQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+  MySQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+} as const;
+
+type SkillKey = keyof typeof skillIcons;
 import { FaFilePdf } from "react-icons/fa";
 
 
@@ -107,67 +128,63 @@ export const BentoGridItem = ({
     >
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
-         {img &&
-  (id === 5 ? (
-    <div className={cn("relative h-full w-full overflow-hidden", imgClassName)}>
-      <style>{`
-        @keyframes marqueeUp {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-      `}</style>
-
-      {/* VIEWPORT */}
-      <div className="absolute inset-0 pt-32 overflow-hidden flex justify-center">
-        {/* TRACK (200% HEIGHT) */}
-        <div
-          className="flex flex-col"
-          style={{
-            height: "200%",
-            animation: "marqueeUp 20s linear infinite",
-            willChange: "transform",
-          }}
-        >
-          {/* BLOCK 1 */}
-          <div className="h-1/2 grid grid-cols-3 gap-8 place-items-center text-3xl">
-            <SiJavascript className="text-[#F7DF1E]" />
-            <SiReact className="text-[#61DAFB]" />
-            <SiThreedotjs className="text-white" />
-            <SiGreensock className="text-[#88CE02]" />
-            <SiFramer className="text-[#E84D8A]" />
-            <SiTailwindcss className="text-[#38BDF8]" />
-            <SiNodedotjs className="text-[#339933]" />
-            <SiGit className="text-[#F05032]" />
-            <SiVite className="text-[#646CFF]" />
-          </div>
-
-          {/* BLOCK 2 — IDENTICAL COPY */}
-          <div className="h-1/2 grid grid-cols-3 gap-8 place-items-center text-3xl">
-            <SiJavascript className="text-[#F7DF1E]" />
-            <SiReact className="text-[#61DAFB]" />
-            <SiThreedotjs className="text-white" />
-            <SiGreensock className="text-[#88CE02]" />
-            <SiFramer className="text-[#E84D8A]" />
-            <SiTailwindcss className="text-[#38BDF8]" />
-            <SiNodedotjs className="text-[#339933]" />
-            <SiGit className="text-[#F05032]" />
-            <SiVite className="text-[#646CFF]" />
-          </div>
-        </div>
-      </div>
-    </div>
-  ) : (
+      <div className="w-full h-full absolute">
+  {/* IMAGE FOR ALL IDS EXCEPT 5 */}
+  {img && id !== 5 && (
     <img
       src={img}
-      alt={img}
-      className={cn(imgClassName, "object-cover object-center")}
+      alt="grid-image"
+      className={cn(
+        "w-full h-full object-cover object-center",
+        imgClassName
+      )}
     />
-  ))}
+  )}
+
+  {/* SKILLS ONLY FOR ID === 5 */}
+  {id === 5 && (
+    <div className="relative w-full h-full overflow-hidden">
+      {/* gradients */}
+      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#04071d] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#04071d] to-transparent z-10 pointer-events-none" />
+
+      <div className="h-full flex items-center ">
+        <div
+          className="flex gap-6 w-max px-6 hover:[animation-play-state:paused]"
+          style={{ animation: "skillScroll 28s linear infinite" }}
+        >
+          {[...Object.keys(skillIcons), ...Object.keys(skillIcons)].map(
+            (skill, index) => (
+              <div key={index} className="flex-shrink-0">
+                <div className="flex flex-col items-center gap-3 px-6 py-5 rounded-2xl bg-[#0c0e23]/80 border border-white/[0.08] hover:scale-110 transition">
+                  <div className="w-14 h-14 rounded-xl bg-white/[0.04] p-2">
+                    <img
+                      src={skillIcons[skill as SkillKey]}
+                      alt={skill}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <span className="text-xs text-[#C1C2D3]">
+                    {skill}
+                  </span>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+
+      <style>
+        {`
+          @keyframes skillScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}
+      </style>
+    </div>
+  )}
+
 
         </div>
         <div
@@ -195,9 +212,15 @@ export const BentoGridItem = ({
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
-         <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-10">
+       <div
+  className={cn(
+    "font-sans text-lg lg:text-3xl max-w-96 font-bold z-10",
+    id === 5 && "absolute top-6 left-1/2 -translate-x-1/2 text-center text-lg lg:text-3xl max-w-96 font-bold "
+  )}
+>
   {title}
 </div>
+
 
 {id === 4 && (
   <div className="mt-6 w-full flex justify-center">
