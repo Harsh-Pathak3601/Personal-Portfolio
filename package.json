@@ -9,11 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
     "@tabler/icons-react": "^3.36.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "formik": "^2.4.9",
     "framer-motion": "^12.23.26",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.562.0",
@@ -27,7 +29,8 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.182.0",
-    "three-globe": "^2.45.0"
+    "three-globe": "^2.45.0",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@types/node": "^20",
