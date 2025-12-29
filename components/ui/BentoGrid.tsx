@@ -156,7 +156,7 @@ export const BentoGridItem = ({
           {[...Object.keys(skillIcons), ...Object.keys(skillIcons)].map(
             (skill, index) => (
               <div key={index} className="flex-shrink-0">
-                <div className="flex flex-col items-center gap-3 px-6 py-5 rounded-2xl bg-[#0c0e23]/80 border border-white/[0.08] hover:scale-110 transition">
+                <div className="flex flex-col items-center gap-3 px-6 py-5 rounded-2xl  hover:scale-110 transition">
                   <div className="w-14 h-14 rounded-xl bg-white/[0.04] p-2">
                     <img
                       src={skillIcons[skill as SkillKey]}
@@ -216,7 +216,7 @@ export const BentoGridItem = ({
   className={cn(
     "font-sans text-lg lg:text-3xl max-w-96 font-bold z-10",
   id === 5 &&
-`absolute top-0 sm:-top-1 md:top-4
+`absolute top-0 sm:-top-1 md:top-4 
  left-1/2 -translate-x-1/2
  text-center
  text-sm sm:text-lg lg:text-3xl
@@ -270,7 +270,7 @@ export const BentoGridItem = ({
       >
         <MagicButton
           title="GitHub"
-          icon={<FaGithub className="text-lg" />}
+          icon={<FaGithub className="text-lg text-gray-400 " />}
           position="left"
         />
       </a>
@@ -298,7 +298,7 @@ export const BentoGridItem = ({
       >
         <MagicButton
           title="CodeChef"
-          icon={<SiCodechef className="text-lg" />}
+          icon={<SiCodechef className="text-lg text-white" />}
           position="left"
         />
       </a>
