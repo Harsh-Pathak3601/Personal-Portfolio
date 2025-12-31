@@ -36,7 +36,7 @@ const Hero = () => {
         words="Transforming Concepts into Seamless Experiences"/>
 
      <h2 className="mt-2 h-[28px] sm:h-[32px] text-sm sm:text-xl font-medium flex items-center justify-center mb-4">
-            Hi👋, I'm Harsh — A Passionate
+            Hi👋, I'm Harsh — A 
             <span className="text-purple font-bold pl-2">
               <Typewriter
                 options={{
