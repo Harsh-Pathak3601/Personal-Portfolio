@@ -35,7 +35,7 @@ const Footer = () => {
     className="w-10 h-10 cursor-pointer flex justify-center items-center
 backdrop-filter backdrop-blur-lg
 bg-white/10
-border border-white/20
+border border-white/20 text-white
 rounded-lg md:mt-10 "
   >
     <Github size={28} />
@@ -49,7 +49,7 @@ rounded-lg md:mt-10 "
     className="w-10 h-10 cursor-pointer flex justify-center items-center
 backdrop-filter backdrop-blur-lg
 bg-white/10
-border border-white/20
+border border-white/20 text-white
 rounded-lg md:mt-10"
   >
     <Linkedin size={28} />
