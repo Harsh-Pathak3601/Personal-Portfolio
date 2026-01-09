@@ -83,7 +83,7 @@ export const projects = [
     des: "An interactive Dragon Ball Z–inspired experience showcasing powerful characters, energy effects.",
     img: "/DragonBall.jpg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    link: "/ui.DragonBall.com",
   },
   {
     id: 2,
@@ -91,7 +91,7 @@ export const projects = [
     des: "A visually engaging Pokémon-themed web project featuring iconic characters, smooth animations, and a responsive modern UI.",
     img: "/Pokemon.webp",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    link: "/ui.Pokemon.com",
   },
   {
     id: 3,
@@ -99,7 +99,7 @@ export const projects = [
     des: "A high-energy Idaten Jump–inspired project highlighting speed, motion, and dynamic UI interactions using cutting-edge frontend tools.",
     img: "idatenjump.webp",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    link: "/ui.Idaten-Jump.com",
   },
   {
     id: 4,
@@ -107,7 +107,7 @@ export const projects = [
      des: "A modern anime-inspired website recreation with smooth GSAP animations and immersive Three.js 3D effects for a premium visual experience.",
     img: "/reyukando.jpg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    link: "/ui.Reyukando.com",
   },
 ];
 
