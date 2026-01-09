@@ -286,7 +286,7 @@ export const BentoGridItem = ({
 
     <div className="w-full max-w-[240px]">
       <a
-        href="https://leetcode.com/Pathak_Harsh"
+        href="https://leetcode.com/"
         target="_blank"
         rel="noopener noreferrer"
       >

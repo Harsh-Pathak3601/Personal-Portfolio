@@ -1,7 +1,7 @@
 "use client";
 
 import { FaLocationArrow} from "react-icons/fa6";
-import { ArrowUpRight, Github, ExternalLink, ChevronLeft, ChevronRight, Layers } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 
