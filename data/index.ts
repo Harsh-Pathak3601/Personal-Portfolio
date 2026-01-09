@@ -12,7 +12,7 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] text-purple",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/ComingSooon.avif",
+    img: "/Pokemon.webp",
     spareImg: "",
   },
   {
