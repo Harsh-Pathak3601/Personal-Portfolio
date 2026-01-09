@@ -1,7 +1,6 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -19,7 +18,7 @@ export const gridItems = [
   {
   
   id: 2,
-  title: "Console.log(Thoughts)",
+  title: "Education🎓",
   description: "",
   className:
     "lg:col-span-2 md:col-span-3 md:row-span-2 text-white overlapping-none",
@@ -34,7 +33,7 @@ export const gridItems = [
     id: 3,
 title: "My Coding Profiles",
 description: "",
-className: "lg:col-span-2 md:col-span-3 md:row-span-2 text-blue-200",
+className: "lg:col-span-2 md:col-span-3 md:row-span-2 text-white",
 imgClassName: "",
 titleClassName: "justify-center text-center",
 img: "",
@@ -48,8 +47,8 @@ spareImg: "",
   className: "lg:col-span-2 md:col-span-3 md:row-span-1 text-white",
   imgClassName: "",
   titleClassName: "justify-start text-center pt-4 md:pt-6",
-  img: "/grid.svg",
-  spareImg: "/b4.svg",
+  img: "",
+  spareImg: "./b4.svg",
 },
 
   

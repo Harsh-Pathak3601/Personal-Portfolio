@@ -91,9 +91,6 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
-
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
@@ -216,7 +213,7 @@ export const BentoGridItem = ({
   className={cn(
     "font-sans text-lg lg:text-3xl max-w-96 font-bold z-10",
   id === 5 &&
-`absolute top-0 sm:-top-1 md:top-4 
+`absolute top-0  md:top-16  sm:top-4 sm:bottom-2
  left-1/2 -translate-x-1/2
  text-center
  text-sm sm:text-lg lg:text-3xl
@@ -253,8 +250,19 @@ export const BentoGridItem = ({
 
           {/* for random */}
           { id === 2 && (
-  <div className="mt-10 flex justify-center ">
-  
+  <div className="mt-10 flex justify-center flex-col ">
+  <span>
+    B.Tech in Artificial Intelligence & Machine Learning 
+    </span>
+    <span>
+      Thakur College of Engineering & Technology
+    </span>
+    <span>
+      Undergraduate (2nd Year)
+      </span>
+      <span className="opacity-6 text-sm text-zinc-100 ">
+        Expected Graduation: 2028
+      </span>
   </div>
 )}
 

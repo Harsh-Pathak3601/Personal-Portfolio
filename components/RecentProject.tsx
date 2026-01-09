@@ -1,6 +1,7 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaLocationArrow} from "react-icons/fa6";
+import { ArrowUpRight, Github, ExternalLink, ChevronLeft, ChevronRight, Layers } from "lucide-react";
 import Link from "next/link";
 
 
@@ -12,7 +13,7 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading text-white">
-        A small selection of{" "}
+        A small selection of my{" "}
         <br />
         <span className="text-purple">recent projects</span>
       </h1>
@@ -20,13 +21,13 @@ const RecentProjects = () => {
         {projects.map((item) => (
           <div
            className="
-  sm:h-[41rem]
-  h-[32rem]
-  lg:min-h-[32.5rem]
-  flex items-center justify-center
-  sm:w-[570px] w-[80vw]
-  relative
-  mb-20 sm:mb-0
+   sm:h-[41rem]
+    h-[28rem]
+    lg:min-h-[32.5rem]
+    flex items-center justify-center
+    sm:w-[570px] w-[80vw]
+    relative
+    mb-8
 "
 
             key={item.id}
@@ -80,7 +81,7 @@ const RecentProjects = () => {
   target="_blank"
   className="flex items-center lg:text-xl md:text-xs text-sm text-purple hover:underline"
 >
- View Live Project
+ View Project
   <FaLocationArrow className="ms-3" color="#CBACF9" />
 </Link>
                 </div>
@@ -89,6 +90,12 @@ const RecentProjects = () => {
           </div>
         ))}
       </div>
+        <div className="text-center mt-0 sm:mt-6 lg:mt-10">
+          <a href="https://github.com/Harsh-Pathak3601?tab=repositories" className="inline-flex font-bold items-center gap-2 text-white hover:text-purple transition-colors  group text-lg">
+            View Full Project Archive
+            <ArrowUpRight size={20} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+          </a>
+        </div>
     </div>
   );
 };

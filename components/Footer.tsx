@@ -11,7 +11,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw] text-white">
-        Let’s build something <span className="text-purple">impactful</span> together.
+        Ready to build<span className="text-purple"> something</span> meaningful together?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Reach out to me today and let&apos;s discuss how I can help you
@@ -58,7 +58,7 @@ rounded-lg md:mt-10"
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
        <p className="md:text-base text-sm md:font-normal font-light text-white/80">
-  © 2026 Portfolio. Made with <span className="text-red-500">❤️</span> by{" "}
+  © 2026 Portfolio. Made with <span className="text-red-500 ">❤️</span> by{" "}
   <span className="text-purple font-medium">Harsh Pathak</span>
 </p>
       </div>
