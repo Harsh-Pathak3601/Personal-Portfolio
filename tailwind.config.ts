@@ -83,6 +83,10 @@ const config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		 fontFamily: {          
+    dancing: ["var(--font-dancing)"],
+	  kaushan: ["var(--font-kaushan)"],
+  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

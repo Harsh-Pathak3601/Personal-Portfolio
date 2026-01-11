@@ -229,7 +229,7 @@ export const BentoGridItem = ({
 
 
 {id === 4 && (
-  <div className="mt-6 w-full flex justify-center">
+  <div className="mt-5 w-full flex justify-center">
     <div className="w-full max-w-[260px]">
       <a
         href="YOUR_RESUME_LINK_HERE"
@@ -248,23 +248,17 @@ export const BentoGridItem = ({
 )}
 
 
-          {/* for random */}
-          { id === 2 && (
-  <div className="mt-10 flex justify-center flex-col ">
-  <span>
-    B.Tech in Artificial Intelligence & Machine Learning 
-    </span>
-    <span>
-      Thakur College of Engineering & Technology
-    </span>
-    <span>
-      Undergraduate (2nd Year)
-      </span>
-      <span className="opacity-6 text-sm text-zinc-100 ">
-        Expected Graduation: 2028
-      </span>
+          {/* for github Stats */}
+       { id === 2 && (
+  <div className="mt-3 flex justify-center">
+    <img
+      src="https://github-readme-stats-fast.vercel.app/api?username=Harsh-Pathak3601&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000"
+      alt="GitHub Stats"
+      className="w-full max-w-3xl h-auto rounded-xl"
+    />
   </div>
 )}
+
 
 
           {/* Tech stack list div */}

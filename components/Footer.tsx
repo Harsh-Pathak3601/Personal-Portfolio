@@ -13,7 +13,7 @@ const Footer = () => {
         <h1 className="heading lg:max-w-[45vw] text-white">
         Ready to build<span className="text-purple"> something</span> meaningful together?
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        <p className="text-white-200 md:mt-10 my-5 text-center font-kaushan">
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>

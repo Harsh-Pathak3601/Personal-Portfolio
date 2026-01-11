@@ -13,10 +13,12 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading text-white">
-        A small selection of my{" "}
-        <br />
-        <span className="text-purple">recent projects</span>
+         Selected{" "}
+        <span className="text-purple"> Projects</span>
       </h1>
+       <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-kaushan max-w-2xl mx-auto text-center">
+        Curated projects showcasing my skills and problem-solving.
+        </p>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.map((item) => (
           <div

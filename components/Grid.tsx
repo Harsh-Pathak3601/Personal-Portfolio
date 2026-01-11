@@ -19,7 +19,7 @@ const Grid = () => {
           Inside My <span className="text-purple">World</span>
         </h1>
 
-        <p className="mt-3 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-light max-w-2xl mx-auto">
+        <p className="mt-3 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-kaushan max-w-2xl mx-auto">
           A snapshot of my work, skills, and developer mindset.
         </p>
       </div>

@@ -47,7 +47,7 @@ const Hero = () => {
                 />
 
                 {/* H2 — PERFECT, UNTOUCHED */}
-                <h2 className="mt-2 h-[28px] sm:h-[32px] text-sm sm:text-xl font-medium flex items-center justify-center mb-4 whitespace-nowrap">
+                <h2 className="mt-2 h-[28px] sm:h-[32px] text-sm sm:text-xl font-kaushan flex items-center justify-center mb-4 whitespace-nowrap">
                   Hi👋, I'm Harsh — A
                   <span className="text-purple font-bold pl-2">
                     <Typewriter

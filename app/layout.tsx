@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Dancing_Script, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
 const inter = Inter({
   subsets: ["latin"],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dancing",
+});
+
+const kaushanScript = Kaushan_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-kaushan",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-   <body className={`${inter.className} min-h-[100svh] bg-background text-foreground overflow-x-hidden`}>
+   <body
+  className={`${inter.className} ${dancingScript.variable} ${kaushanScript.variable} min-h-[100svh] bg-background text-foreground overflow-x-hidden`}
+>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

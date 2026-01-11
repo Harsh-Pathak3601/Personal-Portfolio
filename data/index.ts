@@ -18,7 +18,7 @@ export const gridItems = [
   {
   
   id: 2,
-  title: "Education🎓",
+  title: "GitHub Overview",
   description: "",
   className:
     "lg:col-span-2 md:col-span-3 md:row-span-2 text-white overlapping-none",

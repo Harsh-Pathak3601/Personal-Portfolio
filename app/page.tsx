@@ -8,6 +8,7 @@ import { navItems } from "@/data";
 import { FaHome } from "react-icons/fa";
 
 
+
 const Home = () => {
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-clip mx-auto sm:px-10 px-5">
