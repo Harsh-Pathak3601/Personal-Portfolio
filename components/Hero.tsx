@@ -4,7 +4,7 @@ import React from 'react'
 import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
-import { FaLocationArrow } from 'react-icons/fa'
+import { FaLocationArrow, FaFilePdf } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect'
 
 const Hero = () => {
@@ -66,15 +66,31 @@ const Hero = () => {
                   </span>
                 </h2>
                 {/* BUTTON — centered like picture 2 */}
-                <div className="flex justify-center">
-                  <a href="#about">
-                    <MagicButton
-                      title="Show my work"
-                      icon={<FaLocationArrow />}
-                      position="right"
-                    />
-                  </a>
-                </div>
+             <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+  
+  <a href="#about" className="flex justify-center sm:w-[200px]">
+    <MagicButton
+      title="Show my work"
+      icon={<FaLocationArrow />}
+      position="right"
+    />
+  </a>
+
+  <a
+    href="YOUR_RESUME_LINK_HERE"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex justify-center sm:w-[200px]"
+  >
+    <MagicButton
+      title="View Resume"
+      icon={<FaFilePdf className="text-lg" />}
+      position="left"
+    />
+  </a>
+
+</div>
+
 
               </div>
             </div>
