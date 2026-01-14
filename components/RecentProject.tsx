@@ -66,7 +66,7 @@ const RecentProjects = () => {
                   <Link
                     href={item.link}
                     target="_blank"
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 text-purple hover:bg-purple hover:text-white transition-all duration-300 text-sm font-medium border border-purple/20"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 text-purple hover:bg-purple hover:text-white transition-all duration-300 text-sm font-medium border border-purple/20 "
                   >
                     Live Demo
                     <FaLocationArrow className="w-3 h-3" />

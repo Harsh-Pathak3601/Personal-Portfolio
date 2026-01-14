@@ -34,7 +34,7 @@ const Footer = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
             <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-[10px] font-bold text-green-500 uppercase tracking-widest">
-              Available for new projects
+              Available for Work
             </span>
           </div>
 

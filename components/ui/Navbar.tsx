@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,6 @@ export const Navbar = ({
 }) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
-  // Initializing with "Home" to match the first item in your navItems array
   const [active, setActive] = useState("Home");
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +45,6 @@ export const Navbar = ({
       >
         {/* Logo Section */}
         <div className="flex w-full md:w-auto items-center justify-between px-2">
-          {/* Changed link to lowercase #home to match Hero section ID */}
           <Link 
             href="#home" 
             onClick={() => setActive("Home")}
@@ -95,7 +93,6 @@ export const Navbar = ({
             </div>
           </Link>
 
-          {/* Toggle for Mobile Only */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-white/80 transition-colors focus:outline-none">
             {isOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
           </button>
@@ -106,15 +103,18 @@ export const Navbar = ({
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href={item.link.toLowerCase()} // Forces lowercase to match IDs like #home, #about
+              href={item.link.toLowerCase()} 
               onClick={() => setActive(item.name)}
               className="relative px-4 py-2 text-sm font-medium transition-colors text-white/70 hover:text-white"
             >
               {active === item.name && (
                 <motion.div
-                  layoutId="nav-active"
+                  // REMOVED layoutId: This stops all movement/sliding between links
+                  // Added a simple fade-in so it doesn't flicker harshly
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
                   className="absolute inset-0 bg-white/10 rounded-full border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
               <span className="relative z-10">{item.name}</span>

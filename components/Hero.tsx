@@ -64,10 +64,8 @@ const Hero = () => {
                     />
                   </span>
                 </h2>
-                <p className="text-center md:text-center text-white-100/70 text-base md:text-lg mb-8 max-w-lg leading-relaxed">
-                  Specializing in building high-performance web applications that 
-                  combine robust backend logic with seamless user interfaces. 
-                  Turning complex ideas into scalable reality.
+                <p className="text-center text-white/70 text-sm sm:text-base md:text-lg mb-8 max-w-xl leading-relaxed">
+                 Building scalable, high-performance web applications with clean backend logic and intuitive UIs.
                 </p>
                 {/* BUTTON — centered like picture 2 */}
              <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
