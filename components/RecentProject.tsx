@@ -1,104 +1,97 @@
 "use client";
 
-import { FaLocationArrow} from "react-icons/fa6";
+import { FaLocationArrow } from "react-icons/fa6";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-
-
 import { projects } from "@/data";
-import { PinContainer } from "./ui/Pin";
-import { link } from "fs";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20" id="projects">
-      <h1 className="heading text-white">
+    <section className="py-20 px-4" id="projects">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="heading text-white">
          Selected{" "}
         <span className="text-purple"> Projects</span>
       </h1>
        <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-kaushan max-w-2xl mx-auto text-center">
         Curated projects showcasing my skills and problem-solving.
         </p>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
-        {projects.map((item) => (
-          <div
-           className="
-   sm:h-[41rem]
-    h-[28rem]
-    lg:min-h-[32.5rem]
-    flex items-center justify-center
-    sm:w-[570px] w-[80vw]
-    relative
-    mb-8
-"
+        </div>
 
-            key={item.id}
-          >
-            <PinContainer 
-                title={item.link} href={item.link}
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center justify-center">
+          {projects.map((item) => (
+            <div
+              key={item.id}
+              className="group relative flex flex-col bg-[#0d0e23] border border-white/[0.1] rounded-3xl overflow-hidden transition-all duration-500 hover:border-purple/50 hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)]"
             >
-             <div className="relative sm:w-[570px] w-[80vw] aspect-[16/9] mb-10 rounded-2xl overflow-hidden">
-  <img
-    src={item.img}
-    alt={item.title}
-    className="w-full h-full object-cover"
-  />
-</div>
+              {/* Image Container with Overlay */}
+              <div className="relative overflow-hidden aspect-video">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e23] via-transparent to-transparent opacity-60" />
+              </div>
 
+              {/* Content Area */}
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-purple transition-colors">
+                  {item.title}
+                </h2>
+                
+                <p className="text-gray-400 text-sm md:text-base line-clamp-2 mb-8 leading-relaxed">
+                  {item.des}
+                </p>
 
+                {/* Footer: Icons & Link */}
+                <div className="mt-auto flex items-center justify-between">
+                  <div className="flex items-center">
+                    {item.iconLists.map((icon, index) => (
+                      <div
+                        key={index}
+                        className="border border-white/[0.1] rounded-full bg-black-100 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center backdrop-blur-sm"
+                        style={{
+                          transform: `translateX(-${8 * index}px)`,
+                        }}
+                      >
+                        <img src={icon} alt="icon" className="p-2" />
+                      </div>
+                    ))}
+                  </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-purple"> 
-                {item.title}
-              </h1>     
-              {/* line-clamp is used so that title doesnt go below 2 lines */}
-
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-center items-center">
-                 <Link
-  href={item.link}
-  target="_blank"
-  className="flex items-center lg:text-xl md:text-xs text-sm text-purple hover:underline"
->
- View Project
-  <FaLocationArrow className="ms-3" color="#CBACF9" />
-</Link>
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 text-purple hover:bg-purple hover:text-white transition-all duration-300 text-sm font-medium border border-purple/20"
+                  >
+                    Live Demo
+                    <FaLocationArrow className="w-3 h-3" />
+                  </Link>
                 </div>
               </div>
-            </PinContainer>
-          </div>
-        ))}
-      </div>
-        <div className="text-center mt-0 sm:mt-6 lg:mt-10">
-          <a href="https://github.com/Harsh-Pathak3601?tab=repositories" className="inline-flex font-bold items-center gap-2 text-white hover:text-purple transition-colors  group text-lg">
-            View Full Project Archive
-            <ArrowUpRight size={20} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-          </a>
+            </div>
+          ))}
         </div>
-    </div>
+
+        {/* Archive Link */}
+        <div className="text-center mt-20">
+          <Link
+            href="https://github.com/Harsh-Pathak3601?tab=repositories"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-purple/10 to-transparent border border-purple/30 text-white font-semibold hover:from-purple/20 transition-all group hover:text-purple"
+          >
+            Explore Full Archive
+            <ArrowUpRight
+              size={20}
+              className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+            />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 

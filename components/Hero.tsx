@@ -9,7 +9,7 @@ import Typewriter from 'typewriter-effect'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-32">
+    <section id='Home' className="relative min-h-screen overflow-hidden pt-32">
       {/* Spotlights */}
       <Spotlight
         className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -43,8 +43,7 @@ const Hero = () => {
                     leading-tight
                     mb-6
                   "
-                  words="Merging Creativity with Cutting-Edge Technology"
-                />
+                  words="Building Creativity with Scalable Technology" />
 
                 {/* H2 — PERFECT, UNTOUCHED */}
                 <h2 className="mt-2 h-[28px] sm:h-[32px] text-sm sm:text-xl font-kaushan flex items-center justify-center mb-4 whitespace-nowrap">
@@ -65,6 +64,11 @@ const Hero = () => {
                     />
                   </span>
                 </h2>
+                <p className="text-center md:text-center text-white-100/70 text-base md:text-lg mb-8 max-w-lg leading-relaxed">
+                  Specializing in building high-performance web applications that 
+                  combine robust backend logic with seamless user interfaces. 
+                  Turning complex ideas into scalable reality.
+                </p>
                 {/* BUTTON — centered like picture 2 */}
              <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
   
@@ -86,6 +90,7 @@ const Hero = () => {
       title="View Resume"
       icon={<FaFilePdf className="text-lg" />}
       position="left"
+      otherClasses="border border-white-100/10 !bg-black-200"
     />
   </a>
 
@@ -99,7 +104,7 @@ const Hero = () => {
           {/* RIGHT — IMAGE */}
           <div className="flex-1 flex justify-center md:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 rounded-full blur-2xl " />
+              <div className="absolute inset-0 rounded-full blur-2xl  " />
               <img
                 src="/harsh.jpeg"
                 alt="Harsh"
