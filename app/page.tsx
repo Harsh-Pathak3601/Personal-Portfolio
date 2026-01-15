@@ -1,14 +1,14 @@
 "use client";
-import Grid from "@/components/Grid";
-import Hero from "@/components/Hero"
-import RecentProject from "@/components/RecentProject";
-import Footer from "@/components/Footer";
-
+import dynamic from "next/dynamic"; // Import dynamic for lazy loading
 import { navItems } from "@/data";
-import { FaHome } from "react-icons/fa";
 import { Navbar } from "@/components/ui/Navbar";
 
-
+// Lazy Load for better performance of the main page
+const Hero = dynamic(() => import("@/components/Hero"), { ssr: true });
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: true });
+const RecentProject = dynamic(() => import("@/components/RecentProject"), { ssr: true });
+const ContactPage = dynamic(() => import("@/components/ContactPage"), { ssr: true });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 const Home = () => {
   return (
@@ -20,6 +20,7 @@ const Home = () => {
         </div>
         <Grid />
         <RecentProject />
+        <ContactPage />
         <Footer/>
       </div>
     </main>

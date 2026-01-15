@@ -10,12 +10,12 @@ const RecentProjects = () => {
     <section className="py-20 px-4" id="projects">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="heading text-white">
+        <div className="text-center mb-16 ">
+          <h1 className="heading text-white whitespace-nowrap ">
          Selected{" "}
         <span className="text-purple"> Projects</span>
       </h1>
-       <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-kaushan max-w-2xl mx-auto text-center">
+       <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-kaushan max-w-2xl mx-auto text-center ">
         Curated projects showcasing my skills and problem-solving.
         </p>
         </div>

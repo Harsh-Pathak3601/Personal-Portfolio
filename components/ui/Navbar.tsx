@@ -51,9 +51,10 @@ export const Navbar = ({
             className="group flex items-center gap-3 md:mr-6 outline-none"
           >
             <div className="relative">
-              <div className="absolute -inset-1 bg-cyan-500/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative flex items-center justify-center w-10 h-10 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm group-hover:border-cyan-500/50 transition-colors duration-300">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 text-white group-hover:text-cyan-400 transition-colors duration-300">
+              {/* Updated BG Glow to Purple */}
+              <div className="absolute -inset-1 bg-purple-500/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-center justify-center w-10 h-10 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm group-hover:border-purple-500/50 transition-colors duration-300">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 text-white group-hover:text-purple-400 transition-colors duration-300">
                   <motion.path
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
@@ -77,18 +78,20 @@ export const Navbar = ({
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     d="M7 12H12M17 12H15"
-                    className="stroke-cyan-400"
+                    /* Updated stroke color to Purple */
+                    className="stroke-purple-400"
                   />
                 </svg>
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-black tracking-[0.25em] text-xl leading-none transition-all duration-300 group-hover:tracking-[0.35em]">
+              <span className="text-white font-kaushan tracking-[0.25em] text-xl leading-none transition-all duration-300 group-hover:tracking-[0.35em]">
                 HARSH
               </span>
               <div className="flex items-center gap-1 mt-1">
-                <div className="h-[1px] w-full bg-gradient-to-r from-cyan-500 to-transparent" />
-                <div className="h-1 w-1 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]" />
+                {/* Updated gradient and dot to Purple */}
+                <div className="h-[1px] w-full bg-gradient-to-r from-purple-500 to-transparent" />
+                <div className="h-1 w-1 rounded-full bg-purple-400 animate-pulse shadow-[0_0_8px_#a855f7]" />
               </div>
             </div>
           </Link>
@@ -109,8 +112,6 @@ export const Navbar = ({
             >
               {active === item.name && (
                 <motion.div
-                  // REMOVED layoutId: This stops all movement/sliding between links
-                  // Added a simple fade-in so it doesn't flicker harshly
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
@@ -138,7 +139,8 @@ export const Navbar = ({
                   onClick={() => { setActive(item.name); setIsOpen(false); }}
                   className={cn(
                     "text-lg font-medium border-b border-white/5 pb-2 transition-colors",
-                    active === item.name ? "text-cyan-400" : "text-white/60 hover:text-white"
+                    /* Updated active text to Purple */
+                    active === item.name ? "text-purple-400" : "text-white/60 hover:text-white"
                   )}
                 >
                   {item.name}
