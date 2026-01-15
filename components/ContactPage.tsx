@@ -32,16 +32,17 @@ const ContactPage = () => {
     setSuccess(false);
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+     await emailjs.send(
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+  {
+    from_name: formData.name,
+    reply_to: formData.email, // ✅ FIXED
+    message: formData.message,
+  },
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+);
+
 
       setSuccess(true);
       setFormData({ name: "", email: "", message: "" });
