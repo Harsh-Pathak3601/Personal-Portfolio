@@ -70,7 +70,7 @@ const Hero = () => {
                 {/* BUTTON — centered like picture 2 */}
              <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
   
-  <a href="#about" className="flex justify-center sm:w-[200px]">
+  <a href="#projects" className="flex justify-center sm:w-[200px]">
     <MagicButton
       title="Show my work"
       icon={<FaLocationArrow />}

@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Github, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, ArrowUpRight, Instagram, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,15 +15,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full py-14 relative overflow-hidden bg-[#000319]">
+    <footer className="w-full py-14 mt-20 relative overflow-hidden bg-[#000319]">
       {/* Visual Separator: Purple Gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Changed to flex-col on mobile and grid-cols-3 on desktop with better alignment */}
         <div className="flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-12 items-center">
           
-          {/* Section 1: Logo (Left) */}
+          {/* Section 1: Logo & Tagline (Left) */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link href="#Home" className="group flex items-center gap-3 outline-none">
               <div className="relative">
@@ -68,17 +67,21 @@ const Footer = () => {
                 </div>
               </div>
             </Link>
-            <p className="text-xs text-white/40 uppercase tracking-[0.3em] font-medium text-center md:text-left">
-              Mumbai • Maharashtra • India
+            
+            
+            <p className="text-sm italic text-white font-kaushan tracking-wide max-w-[250px] text-center md:text-left">
+            Turning lines of code into <span className="text-purple-400/80">exceptional</span> digital experiences.
             </p>
+             
           </div>
 
-          {/* Section 2: Social Links (Center) - Added order-3 on mobile to move it below Nav */}
+          {/* Section 2: Social Links (Center) */}
           <div className="flex justify-center items-center gap-4 order-3 md:order-2">
             {[
               { icon: Github, href: "https://github.com/Harsh-Pathak3601" },
               { icon: Linkedin, href: "https://linkedin.com/in/harsh-pathak-199503370" },
-              { icon: Twitter, href: "#" },
+              { icon: Mail, href: "mailto:harshpathak3601@gmail.com" },
+              { icon: Instagram, href: "https://instagram.com/harsh._.pathak1905" },
             ].map((social, i) => (
               <a
                 key={i}
@@ -92,7 +95,7 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Section 3: Navigation (Right) - Added order-2 on mobile */}
+          {/* Section 3: Navigation (Right) */}
           <nav className="flex flex-row justify-center md:justify-end items-center gap-x-6 gap-y-4 flex-wrap order-2 md:order-3">
             {navLinks.map((link) => (
               <a 
@@ -107,12 +110,21 @@ const Footer = () => {
           </nav>
         </div>
 
-        {/* Copyright Bar */}
-        <div className="mt-14 pt-8 border-t border-white/5 flex flex-col items-center gap-4">
-          <p className="text-xs font-bold text-white text-center whitespace-nowrap">
-            © {currentYear} <span className="text-white font-bold">Portfolio</span>. 
-            Made with ❤️ by <span className="text-purple-500 font-bold">Harsh Pathak</span>
+
+        {/* Copyright Bar & Location */}
+        <div className="mt-14 pt-8 border-t border-white/5 flex flex-col items-center gap-3">
+          <p className="text-sm tracking-tight font-bold text-white text-center whitespace-nowrap">
+            © {currentYear} Portfolio. Made with ❤️ by <span className="text-purple-500">Harsh Pathak</span>
           </p>
+          
+          {/* Location moved here */}
+          <div className="flex items-center gap-2 opacity-40 group hover:opacity-100 transition-opacity">
+            <span className="h-[1px] w-4 bg-purple-500" />
+            <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white whitespace-nowrap">
+              Mumbai • Maharashtra • India
+            </p>
+            <span className="h-[1px] w-4 bg-purple-500" />
+          </div>
         </div>
       </div>
     </footer>
