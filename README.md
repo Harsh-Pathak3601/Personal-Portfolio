@@ -1,8 +1,8 @@
 # 🚀 Personal Portfolio – Next.js & TypeScript
 
-**Interactive developer portfolio** built with **Next.js** and **TypeScript**, designed to showcase my skills, projects, and professional identity with modern UI components and responsive layouts.
+Interactive developer portfolio built with **Next.js** and **TypeScript**, designed to showcase my skills, projects, and professional identity with modern UI components and responsive layouts.
 
-🌐 **Live Website:** https://harsh-pathak-portfolio.vercel.app 
+🌐 **Live Website:** [harsh-pathak-portfolio.vercel.app](https://harsh-pathak-portfolio.vercel.app)
 
 ---
 
@@ -10,19 +10,19 @@
 
 This portfolio includes:
 
-✨ **Home Section**  
+### ✨ Home Section
 A welcoming hero section with a brief professional introduction.
 
-📦 **About Section (Bento Grid UI)**  
+### 📦 About Section (Bento Grid UI)
 A visually engaging bento grid layout highlighting skills, expertise, and background.
 
-🗂️ **Projects Section**  
+### 🗂️ Projects Section
 Modern, sleek UI cards showcasing featured projects with descriptions and tech stack.
 
-📬 **Contact Page**  
+### 📬 Contact Page
 Contact form and social links to connect professionally.
 
-📍 **Footer**  
+### 📍 Footer
 Minimal footer with essential links and branding.
 
 ---
@@ -51,7 +51,8 @@ Minimal footer with essential links and branding.
 ├── tsconfig.json       # TypeScript config
 ├── package.json
 └── README.md
-
+```
+---
 🚀 Getting Started
 1️⃣ Clone the Repository
 git clone https://github.com/Harsh-Pathak3601/Personal-Portfolio.git
@@ -70,8 +71,8 @@ npm run dev
 
 Open http://localhost:3000
  in your browser.
-
-💡 Features
+ ---
+ 💡 Features
 
 Responsive design for all screens
 
@@ -87,16 +88,26 @@ Clean and modern aesthetic UI
 
 Bento Grid About Section – Visually unique presentation
 
-Project Cards – Engaging UI to highlight work
+Modern Project Cards – Engaging UI to highlight work
 
 Tailwind CSS + TypeScript – Best practices for modern frontend
 
 SEO & Accessibility Friendly – Fast and discoverable
 
-📬 Contact
+---
+## 📬 Contact
 
-🌐 **Live Portfolio** – [harsh-pathak-portfolio.vercel.app](https://harsh-pathak-portfolio.vercel.app)
+🌐 Live Portfolio:
+https://harsh-pathak-portfolio.vercel.app
 
-🐙 **GitHub** – [github.com/Harsh-Pathak3601](https://github.com/Harsh-Pathak3601)
+🐙 GitHub:
+https://github.com/Harsh-Pathak3601
 
-📧 **Email** – [pathakharsh3601@gmail.com](mailto:pathakharsh3601@gmail.com)
+📧 Email:
+pathakharsh3601@gmail.com
+
+---
+<div align="center">
+  Made with ❤️ by Harsh Pathak for you all
+</div>
+
