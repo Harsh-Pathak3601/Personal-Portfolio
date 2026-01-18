@@ -95,8 +95,8 @@ SEO & Accessibility Friendly – Fast and discoverable
 
 📬 Contact
 
-🌐**  Live Portfolio**  – [harsh-pathak-portfolio.vercel.app](https://harsh-pathak-portfolio.vercel.app)
+🌐 **Live Portfolio** – [harsh-pathak-portfolio.vercel.app](https://harsh-pathak-portfolio.vercel.app)
 
-🐙 GitHub – [github.com/Harsh-Pathak3601](https://github.com/Harsh-Pathak3601)
+🐙 **GitHub** – [github.com/Harsh-Pathak3601](https://github.com/Harsh-Pathak3601)
 
-📧 Email – [pathakharsh3601@gmail.com](mailto:pathakharsh3601@gmail.com)
+📧 **Email** – [pathakharsh3601@gmail.com](mailto:pathakharsh3601@gmail.com)
