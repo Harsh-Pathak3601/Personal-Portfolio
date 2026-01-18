@@ -1,4 +1,4 @@
-# 🚀 Personal Portfolio – Next.js & TypeScript
+# 🚀 Personal Portfolio 
 
 Interactive developer portfolio built with **Next.js** and **TypeScript**, designed to showcase my skills, projects, and professional identity with modern UI components and responsive layouts.
 
