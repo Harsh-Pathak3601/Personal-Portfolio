@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Personal Portfolio – Next.js & TypeScript
 
-## Getting Started
+**Interactive developer portfolio** built with **Next.js** and **TypeScript**, designed to showcase my skills, projects, and professional identity with modern UI components and responsive layouts.
 
-First, run the development server:
+🌐 **Live Website:** https://harsh-pathak-portfolio.vercel.app :contentReference[oaicite:2]{index=2}
+
+---
+
+## 🧠 Overview
+
+This portfolio includes:
+
+✨ **Home Section**  
+A welcoming hero section with a brief professional introduction.
+
+📦 **About Section (Bento Grid UI)**  
+A visually engaging bento grid layout highlighting skills, expertise, and background.
+
+🗂️ **Projects Section**  
+Modern, sleek UI cards showcasing featured projects with descriptions and tech stack.
+
+📬 **Contact Page**  
+Contact form and social links to connect professionally.
+
+📍 **Footer**  
+Minimal footer with essential links and branding.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Performance:** Optimized for speed and accessibility
+
+---
+
+## 📁 Project Structure
 
 ```bash
+.
+├── app/                # Next.js pages and layout
+├── components/         # UI components (Hero, BentoGrid, Cards, Footer, etc.)
+├── data/               # Content & project metadata
+├── lib/                # Helpers or utility functions
+├── public/             # Images and static assets
+├── styles/             # Global styles
+├── tailwind.config.ts  # Tailwind CSS config
+├── tsconfig.json       # TypeScript config
+├── package.json
+└── README.md
+
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/Harsh-Pathak3601/Personal-Portfolio.git
+cd Personal-Portfolio
+
+2️⃣ Install Dependencies
+npm install
+# or
+pnpm install
+# or
+yarn install
+
+3️⃣ Run the Dev Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000
+ in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💡 Features
 
-## Learn More
+Responsive design for all screens
 
-To learn more about Next.js, take a look at the following resources:
+Performance optimizations and animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Accessible UI with semantic markup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Easy content updates using structured data
 
-## Deploy on Vercel
+Clean and modern aesthetic UI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🌟 Highlights
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bento Grid About Section – Visually unique presentation
+
+Project Cards – Engaging UI to highlight work
+
+Tailwind CSS + TypeScript – Best practices for modern frontend
+
+SEO & Accessibility Friendly – Fast and discoverable
+
+📬 Contact
+
+🌐 Live Portfolio – https://harsh-pathak-portfolio.vercel.app
+
+🐙 GitHub – https://github.com/Harsh-Pathak3601
+
+📧 Email – (mailto:pathakharsh3601@gmail.com)
