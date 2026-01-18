@@ -54,8 +54,10 @@ Minimal footer with essential links and branding.
 ```
 ---
 🚀 Getting Started
+
 1️⃣ Clone the Repository
 git clone https://github.com/Harsh-Pathak3601/Personal-Portfolio.git
+
 cd Personal-Portfolio
 
 2️⃣ Install Dependencies
