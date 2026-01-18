@@ -2,7 +2,7 @@
 
 **Interactive developer portfolio** built with **Next.js** and **TypeScript**, designed to showcase my skills, projects, and professional identity with modern UI components and responsive layouts.
 
-🌐 **Live Website:** https://harsh-pathak-portfolio.vercel.app :contentReference[oaicite:2]{index=2}
+🌐 **Live Website:** https://harsh-pathak-portfolio.vercel.app 
 
 ---
 
@@ -95,8 +95,8 @@ SEO & Accessibility Friendly – Fast and discoverable
 
 📬 Contact
 
-🌐 Live Portfolio – https://harsh-pathak-portfolio.vercel.app
+🌐 Live Portfolio – [harsh-pathak-portfolio.vercel.app](https://harsh-pathak-portfolio.vercel.app)
 
-🐙 GitHub – https://github.com/Harsh-Pathak3601
+🐙 GitHub – [github.com/Harsh-Pathak3601](https://github.com/Harsh-Pathak3601)
 
-📧 Email – (mailto:pathakharsh3601@gmail.com)
+📧 Email – [pathakharsh3601@gmail.com](mailto:pathakharsh3601@gmail.com)
