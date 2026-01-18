@@ -78,14 +78,13 @@ export const Navbar = ({
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     d="M7 12H12M17 12H15"
-                    /* Updated stroke color to Purple */
                     className="stroke-purple-400"
                   />
                 </svg>
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-kaushan tracking-[0.25em] text-xl leading-none transition-all duration-300 group-hover:tracking-[0.35em]">
+              <span className="text-white font-bold tracking-[0.25em] text-xl leading-none transition-all duration-300 group-hover:tracking-[0.35em]">
                 HARSH
               </span>
               <div className="flex items-center gap-1 mt-1">

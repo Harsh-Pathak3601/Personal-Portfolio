@@ -8,28 +8,28 @@ export const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
 
   const getCustomGreeting = () => {
     const hour = new Date().getHours();
-    let timeGreeting = "";
-    if (hour < 12) timeGreeting = "Good Morning";
-    else if (hour < 18) timeGreeting = "Good Afternoon";
-    else timeGreeting = "Good Evening";
-    
-    // Adding a friendly "Hello" prefix
+    let timeGreeting = hour < 12 ? "Good Morning" : hour < 17 ? "Good Afternoon" : "Good Evening";
     return `Hello, ${timeGreeting}`;
   };
 
   useEffect(() => {
     const startTime = Date.now();
+    
     const timerInterval = setInterval(() => {
       const elapsed = (Date.now() - startTime) / 1000;
-      setTimer(elapsed);
+      setTimer(Math.min(elapsed, 2.5));
     }, 10);
 
-    const timer1 = setTimeout(() => setStep(1), 30); 
-    const timer2 = setTimeout(() => setStep(2), 900); 
+    const timer1 = setTimeout(() => setStep(1), 50); 
+
+    
+    const timer2 = setTimeout(() => setStep(2), 1200); 
+
+    
     const timer3 = setTimeout(() => {
       clearInterval(timerInterval);
       onComplete();
-    }, 2400); 
+    }, 2500); 
 
     return () => {
       clearTimeout(timer1);
@@ -44,7 +44,7 @@ export const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
       initial={{ opacity: 1 }}
       exit={{ 
         y: "-100%", 
-        transition: { duration: 0.6, ease: [0.7, 0, 0.3, 1] } 
+        transition: { duration: 0.8, ease: [0.7, 0, 0.3, 1] } 
       }}
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#030303] overflow-hidden"
     >
@@ -55,10 +55,10 @@ export const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
           {step === 1 && (
             <motion.div
               key="greeting"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10, filter: "blur(8px)" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               className="flex flex-col items-center"
             >
               <motion.div 
@@ -76,7 +76,6 @@ export const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
                 </svg>
                 <div className="absolute inset-4 bg-purple-500/20 blur-xl -z-10 rounded-full" />
               </motion.div>
-              
               <h1 className="text-white text-2xl md:text-3xl font-extralight italic tracking-wide text-center">
                 {getCustomGreeting()}
               </h1>
@@ -88,40 +87,60 @@ export const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
               key="branding"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               className="flex flex-col items-center"
             >
-              <div className="flex items-center gap-4 md:gap-6 mb-4">
-                <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center border border-white/10 rounded-2xl bg-white/5 backdrop-blur-xl text-white">
-                  <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 md:w-10 md:h-10">
-                    <motion.path
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 0.5 }}
-                      stroke="currentColor" strokeWidth="1.5" d="M7 4V20"
-                    />
-                    <motion.path
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                      stroke="currentColor" strokeWidth="1.5" d="M17 4V20"
-                    />
-                    <motion.path
-                      initial={{ pathLength: 0 }}
-                      animate={{ pathLength: 1 }}
-                      transition={{ duration: 0.4, delay: 0.3 }}
-                      stroke="#a855f7" strokeWidth="2.5" d="M7 12H12M17 12H15"
-                    />
-                  </svg>
+              <div className="flex items-center gap-4 md:gap-6 mb-6">
+                <div className="relative group">
+                   <div className="absolute -inset-2 bg-purple-500/20 blur-xl rounded-full opacity-50" />
+                   <div className="relative w-14 h-14 md:w-20 md:h-20 flex items-center justify-center border border-white/20 rounded-2xl bg-white/5 backdrop-blur-xl text-white">
+                    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10 md:w-12 md:h-12">
+                      <motion.path
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                        stroke="currentColor" 
+                        strokeWidth="2.5" 
+                        strokeLinecap="round"
+                        d="M7 4V20"
+                      />
+                      <motion.path
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 0.8, delay: 0.1, ease: "easeInOut" }}
+                        stroke="currentColor" 
+                        strokeWidth="2.5" 
+                        strokeLinecap="round"
+                        d="M17 4V20"
+                      />
+                      <motion.path
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+                        stroke="#a855f7" 
+                        strokeWidth="2.5" 
+                        strokeLinecap="round"
+                        d="M7 12H12M17 12H15"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <h2 className="text-white font-bold text-4xl md:text-6xl tracking-tighter uppercase leading-none">
-                  HARSH<span className="text-purple-500">.</span>
-                </h2>
+
+                <div className="flex flex-col">
+                  <h2 className="text-white font-bold text-4xl md:text-6xl tracking-[0.25em] uppercase leading-none">
+                    HARSH
+                  </h2>
+                  <div className="flex items-center gap-1 mt-2">
+                    <div className="h-[2px] w-full bg-gradient-to-r from-purple-500 to-transparent" />
+                    <div className="h-2 w-2 rounded-full bg-purple-400 animate-pulse shadow-[0_0_12px_#a855f7]" />
+                  </div>
+                </div>
               </div>
               
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
                 className="text-[10px] md:text-xs text-white/40 uppercase tracking-[0.5em] font-medium text-center"
               >
                 Welcome to my Portfolio
@@ -133,10 +152,10 @@ export const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
 
       <div className="absolute bottom-10 w-full px-12 flex justify-between items-end opacity-40">
         <div className="flex flex-col gap-1 font-mono">
-          <p className="text-[9px] text-white tracking-[0.2em]">
-            BOOT_TIME: <span className={timer > 2.5 ? "text-red-500" : "text-green-500"}>{timer.toFixed(2)}s</span>
-          </p>
-          <p className="text-[9px] text-purple-400 tracking-[0.2em]">STATUS: {step === 2 ? "READY" : "LOADING"}</p>
+       <p className="text-[9px] text-purple-400 tracking-[0.2em]">
+  {step === 2 ? "ENTERING PORTFOLIO…" : "SYSTEM CHECK: READY"}
+</p>
+
         </div>
       </div>
     </motion.div>

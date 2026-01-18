@@ -91,6 +91,8 @@ const config = {
 		 fontFamily: {          
     dancing: ["var(--font-dancing)"],
 	  kaushan: ["var(--font-kaushan)"],
+	  	gloria: ["var(--font-gloria)"],
+		satisfy: ["var(--font-satisfy)"]
   },
   		borderRadius: {
   			lg: 'var(--radius)',
