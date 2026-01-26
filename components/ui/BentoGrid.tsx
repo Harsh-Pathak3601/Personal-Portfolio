@@ -150,7 +150,7 @@ export const BentoGridItem = ({
                 </div>
               </div>
 
-              <div className="flex flex-col items-center px-10 z-20 mt-10">
+              <div className="flex flex-col items-center px-10 z-20 mt-8">
                 <div className="w-20 h-[1.5px] bg-gradient-to-r from-transparent via-purple-500/60 to-transparent mb-4" />
                 <span className="font-kaushan font-extralight text-[#C1C2D3] text-[10px] md:text-xs uppercase tracking-[0.3em] leading-relaxed text-center opacity-70">
                   Continuous Learning Modern Tools & Technologies
