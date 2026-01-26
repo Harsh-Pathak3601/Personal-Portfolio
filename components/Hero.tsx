@@ -24,18 +24,16 @@ const Hero = () => {
         fill="blue"
       />
 
-      {/* Content */}
+     
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex min-h-[75vh] flex-col md:flex-row items-center justify-between gap-16">
 
-          {/* LEFT — TEXT */}
+      
           <div className="flex-1">
-
-            {/* CENTERED BLOCK (this is the magic) */}
             <div className="flex justify-center">
               <div className="max-w-xl">
 
-                {/* TITLE — left aligned */}
+                
                 <TextGenerateEffect
                   className="
                     text-center
@@ -45,7 +43,7 @@ const Hero = () => {
                   "
                   words="Building Creativity with Scalable Technology" />
 
-                {/* H2 — PERFECT, UNTOUCHED */}
+                
                 <h2 className="mt-2 h-[28px] sm:h-[32px] text-sm sm:text-xl font-kaushan flex items-center justify-center mb-4 whitespace-nowrap">
                   Hi👋, I'm Harsh — A
                   <span className="text-purple font-bold pl-2">
@@ -67,7 +65,7 @@ const Hero = () => {
                 <p className="text-center text-white/70 text-sm sm:text-base md:text-lg mb-8 max-w-xl leading-relaxed">
                  Building scalable, high-performance web applications with clean backend logic and intuitive UIs.
                 </p>
-                {/* BUTTON — centered like picture 2 */}
+                
              <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
   
   <a href="#projects" className="flex justify-center sm:w-[200px]">

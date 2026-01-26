@@ -39,7 +39,7 @@ export const Navbar = ({
         className={cn(
           "fixed top-6 inset-x-4 md:inset-x-0 mx-auto z-[5000] flex flex-col md:flex-row items-center justify-between",
           "max-w-7xl md:max-w-fit px-6 py-3 rounded-[2rem] md:rounded-full shadow-lg transition-all duration-300",
-          "bg-white/10 backdrop-blur-xl border border-white/20",
+          " backdrop-blur-xl border  bg-purple-500/10 border-purple-500/20 ",
           className
         )}
       >
@@ -84,7 +84,7 @@ export const Navbar = ({
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-white font-bold tracking-[0.25em] text-xl leading-none transition-all duration-300 group-hover:tracking-[0.35em]">
+              <span className="text-white font-bold tracking-[0.25em] text-xl leading-none transition-all duration-300 group-hover:tracking-[0.35em] hover:text-purple-400">
                 HARSH
               </span>
               <div className="flex items-center gap-1 mt-1">
@@ -95,7 +95,7 @@ export const Navbar = ({
             </div>
           </Link>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-white/80 transition-colors focus:outline-none">
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-white/80 transition-colors focus:outline-none ">
             {isOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
           </button>
         </div>
@@ -107,7 +107,7 @@ export const Navbar = ({
               key={item.name}
               href={item.link.toLowerCase()} 
               onClick={() => setActive(item.name)}
-              className="relative px-4 py-2 text-sm font-medium transition-colors text-white/70 hover:text-white"
+              className="relative px-4 py-2 text-sm font-medium transition-colors text-white/70 hover:text-purple-600"
             >
               {active === item.name && (
                 <motion.div
@@ -139,7 +139,7 @@ export const Navbar = ({
                   className={cn(
                     "text-lg font-medium border-b border-white/5 pb-2 transition-colors",
                     /* Updated active text to Purple */
-                    active === item.name ? "text-purple-400" : "text-white/60 hover:text-white"
+                    active === item.name ? "text-purple-400" : "text-white/60"
                   )}
                 >
                   {item.name}

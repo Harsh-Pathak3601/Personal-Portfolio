@@ -16,13 +16,13 @@ const Footer = () => {
 
   return (
     <footer className="w-full py-14 mt-20 relative overflow-hidden bg-[#000319]">
-      {/* Visual Separator: Purple Gradient */}
+      {/* Visual Separator: Purple Gradient*/}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-12 items-center">
           
-          {/* Section 1: Logo & Tagline (Left) */}
+          {/* Section 1: Logo & Tagline*/}
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link href="#Home" className="group flex items-center gap-3 outline-none">
               <div className="relative">
@@ -75,7 +75,7 @@ const Footer = () => {
              
           </div>
 
-          {/* Section 2: Social Links (Center) */}
+          {/* Section 2: Social Links*/}
           <div className="flex justify-center items-center gap-4 order-3 md:order-2">
             {[
               { icon: Github, href: "https://github.com/Harsh-Pathak3601" },
@@ -117,7 +117,7 @@ const Footer = () => {
             © {currentYear} Portfolio. Made with ❤️ by <span className="text-purple-500">Harsh Pathak</span>
           </p>
           
-          {/* Location moved here */}
+          {/* Location*/}
           <div className="flex items-center gap-2 opacity-40 group hover:opacity-100 transition-opacity">
             <span className="h-[1px] w-4 bg-purple-500" />
             <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white whitespace-nowrap">

@@ -32,7 +32,7 @@ export const gridItems = [
   },
   {
     id: 3,
-title: "My Coding Profiles",
+title: "LeetCode Overview",
 description: "",
 className: "lg:col-span-2 md:col-span-3 md:row-span-2 text-white",
 imgClassName: "",
@@ -43,24 +43,24 @@ spareImg: "",
   },
  {
   id: 4,
-  title: "Resume",
+  title: "Most Used languages",
   description: "",
   className: "lg:col-span-2 md:col-span-3 md:row-span-1 text-white",
   imgClassName: "",
   titleClassName: "justify-start text-center pt-4 md:pt-4",
   img: "",
-  spareImg: "./b4.svg",
+  spareImg: "",
 },
 
   
 
   {
     id: 5,
-    title: "My Tech Stacks",
-    description: "",
+    title: "My Tech Stack",
+    description: "Tools I use to build seamless digital experiences",
    className: "md:col-span-3 md:row-span-2 lg:col-span-3 lg:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center text-white ",
+    titleClassName: "justify-center md:justify-start lg:justify-center  ",
     img: "/b5.svg",
     spareImg: "/grid.svg",
   },

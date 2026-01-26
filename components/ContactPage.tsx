@@ -138,7 +138,7 @@ const ContactPage = () => {
   );
 };
 
-/* ---------- Updated Components ---------- */
+/*Components */
 
 const Info = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
   <div className="flex items-center gap-4 sm:gap-5 group">

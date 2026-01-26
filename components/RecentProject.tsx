@@ -13,7 +13,7 @@ const RecentProjects = () => {
         <div className="text-center mb-16 ">
           <h1 className="heading text-white whitespace-nowrap ">
          Selected{" "}
-        <span className="text-purple"> Projects</span>
+        <span className="text-purple "> Projects</span>
       </h1>
        <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-2xl md:tracking-wider text-white font-kaushan max-w-2xl mx-auto text-center ">
         Curated projects showcasing my skills and problem-solving.
@@ -21,7 +21,7 @@ const RecentProjects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center justify-center ">
           {projects.map((item) => (
             <div
               key={item.id}
