@@ -65,50 +65,59 @@ spareImg: "",
     spareImg: "/grid.svg",
   },
 
-  {
+{
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "Interactive Console",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
+    titleClassName: "justify-center items-center w-full text-center", 
     img: "",
     spareImg: "",
   },
 ];
 
-export const projects = [
+  
+ export const projects = [
   {
     id: 1,
     title: "DragonBall Z",
-    des: "An interactive Dragon Ball Z–inspired experience showcasing powerful characters, energy effects.",
+    des: "An interactive Dragon Ball Z–inspired experience showcasing powerful energy effects and immersive 3D animations.",
     img: "/DragonBall.jpg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.DragonBall.com",
+    techNames: ["React", "Tailwind", "TypeScript", "Three.js", "Framer"], 
+    link: "https://ui.DragonBall.com",
+    github: "https://github.com/Harsh-Pathak3601/DragonBall-Z",
   },
   {
     id: 2,
     title: "Pokemon",
-    des: "A visually engaging Pokémon-themed web project featuring iconic characters, smooth animations, and a responsive modern UI.",
+    des: "A visually engaging Pokémon-themed project featuring iconic characters and a responsive modern UI.",
     img: "/Pokemon.webp",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.Pokemon.com",
+    techNames: ["Next.js", "Tailwind", "TypeScript", "Stream", "Cloudinary"],
+    link: "https://ui.Pokemon.com",
+    github: "https://github.com/Harsh-Pathak3601/Pokemon-Web",
   },
   {
     id: 3,
     title: "Idaten Jump",
-    des: "A high-energy Idaten Jump–inspired project highlighting speed, motion, and dynamic UI interactions using cutting-edge frontend tools.",
-    img: "idatenjump.webp",
+    des: "A high-energy project highlighting speed and dynamic UI interactions using cutting-edge frontend tools.",
+    img: "/idatenjump.webp",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.Idaten-Jump.com",
+    techNames: ["React", "Tailwind", "TypeScript", "Three.js", "Cloudinary"],
+    link: "https://ui.Idaten-Jump.com",
+    github: "https://github.com/Harsh-Pathak3601/Idaten-Jump",
   },
   {
     id: 4,
     title: "Reyukando",
-     des: "A modern anime-inspired website recreation with smooth GSAP animations and immersive Three.js 3D effects for a premium visual experience.",
+    des: "A premium website recreation with smooth GSAP animations and immersive Three.js 3D effects.",
     img: "/reyukando.jpg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.Reyukando.com",
+    techNames: ["Next.js", "Tailwind", "TypeScript", "Three.js", "GSAP"],
+    link: "https://ui.Reyukando.com",
+    github: "https://github.com/Harsh-Pathak3601/Reyukando",
   },
 ];
 

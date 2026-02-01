@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { navItems } from "@/data";
 import { Navbar } from "@/components/ui/Navbar";
-import {IntroLoader} from "@/components/ui/IntroLoader"
+import { IntroLoader } from "@/components/ui/IntroLoader";
 
 // Lazy Load components
 const Hero = dynamic(() => import("@/components/Hero"), { ssr: true });
@@ -13,12 +13,11 @@ const RecentProject = dynamic(() => import("@/components/RecentProject"), { ssr:
 const ContactPage = dynamic(() => import("@/components/ContactPage"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
-
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-clip mx-auto sm:px-10 px-5">
+    <main className="relative bg-background flex flex-col items-center overflow-x-hidden w-full min-h-screen">
       {/* 1. Intro Screen Logic */}
       <AnimatePresence mode="wait">
         {isLoading && (
@@ -26,13 +25,10 @@ const Home = () => {
         )}
       </AnimatePresence>
 
-      
       {!isLoading && (
-        <div className="max-w-7xl w-full">
+        <div className="w-full flex flex-col items-center">
           <Navbar navItems={navItems} />
-          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-            <Hero />
-          </div>
+          <Hero />
           <Grid />
           <RecentProject />
           <ContactPage />

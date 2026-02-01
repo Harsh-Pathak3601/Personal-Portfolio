@@ -1,8 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
-
-const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -18,174 +16,134 @@ const config = {
   ],
   prefix: "",
   theme: {
-  	container: {
-  		center: true,
-  		padding: '2rem',
-  		screens: {
-  			'2xl': '1400px'
-  		}
-  	},
-  	extend: {
-  		colors: {
-  			black: {
-  				'100': '#000319',
-  				'200': 'rgba(17, 25, 40, 0.75)',
-  				'300': 'rgba(255, 255, 255, 0.125)',
-  				DEFAULT: '#000'
-  			},
-  			white: {
-  				'100': '#BEC1DD',
-  				'200': '#C1C2D3',
-  				DEFAULT: '#FFF'
-  			},
-  			blue: {
-  				'100': '#E4ECFF'
-  			},
-  			purple: {
-				DEFAULT: '#CBACF9',
-				400: "#C084FC",
-          500: "#A855F7",
-          600: "#9333EA",
-			} ,
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
-  		},
-		 fontFamily: {          
-    dancing: ["var(--font-dancing)"],
-	  kaushan: ["var(--font-kaushan)"],
-	  	gloria: ["var(--font-gloria)"],
-		satisfy: ["var(--font-satisfy)"]
-  },
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		},
-  		keyframes: {
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			},
-  			spotlight: {
-  				'0%': {
-  					opacity: '0',
-  					transform: 'translate(-72%, -62%) scale(0.5)'
-  				},
-  				'100%': {
-  					opacity: '1',
-  					transform: 'translate(-50%,-40%) scale(1)'
-  				}
-  			},
-  			shimmer: {
-  				from: {
-  					backgroundPosition: '0 0'
-  				},
-  				to: {
-  					backgroundPosition: '-200% 0'
-  				}
-  			},
-  			moveHorizontal: {
-  				'0%': {
-  					transform: 'translateX(-50%) translateY(-10%)'
-  				},
-  				'50%': {
-  					transform: 'translateX(50%) translateY(10%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(-50%) translateY(-10%)'
-  				}
-  			},
-  			moveInCircle: {
-  				'0%': {
-  					transform: 'rotate(0deg)'
-  				},
-  				'50%': {
-  					transform: 'rotate(180deg)'
-  				},
-  				'100%': {
-  					transform: 'rotate(360deg)'
-  				}
-  			},
-  			moveVertical: {
-  				'0%': {
-  					transform: 'translateY(-50%)'
-  				},
-  				'50%': {
-  					transform: 'translateY(50%)'
-  				},
-  				'100%': {
-  					transform: 'translateY(-50%)'
-  				}
-  			},
-  			scroll: {
-  				to: {
-  					transform: 'translate(calc(-50% - 0.5rem))'
-  				}
-  			}
-  		},
-  		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
-  			spotlight: 'spotlight 2s ease .75s 1 forwards',
-  			shimmer: 'shimmer 2s linear infinite',
-  			first: 'moveVertical 30s ease infinite',
-  			second: 'moveInCircle 20s reverse infinite',
-  			third: 'moveInCircle 40s linear infinite',
-  			fourth: 'moveHorizontal 40s ease infinite',
-  			fifth: 'moveInCircle 20s ease infinite',
-  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
-  		}
-  	}
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px'
+      }
+    },
+    extend: {
+      colors: {
+        // Deep Obsidian Tones (Better than basic blue-black)
+        black: {
+          '100': '#03000a', 
+          '200': '#080112',
+          '300': 'rgba(255, 255, 255, 0.125)',
+          DEFAULT: '#000'
+        },
+        white: {
+          '100': '#E2E8F0',
+          '200': '#CBD5E1',
+          DEFAULT: '#FFF'
+        },
+        // Electric Purple Scale
+        purple: {
+          DEFAULT: "#a855f7",
+          400: "#c084fc",
+          500: "#a855f7",
+          600: "#9333ea",
+          glow: "rgba(168, 85, 247, 0.4)",
+        },
+        // Shadcn UI Mapping (Linked to index.css variables)
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))'
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))'
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))'
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))'
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))'
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))'
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))'
+        },
+      },
+      fontFamily: {          
+        dancing: ["var(--font-dancing)"],
+        kaushan: ["var(--font-kaushan)"],
+        gloria: ["var(--font-gloria)"],
+        satisfy: ["var(--font-satisfy)"]
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)'
+      },
+      backgroundImage: {
+        // Premium depth background
+        'mesh-purple': "radial-gradient(at 0% 0%, hsla(273, 91%, 64%, 0.15) 0, transparent 50%), radial-gradient(at 100% 100%, hsla(270, 94%, 75%, 0.1) 0, transparent 50%)",
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' }
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' }
+        },
+        spotlight: {
+          '0%': { opacity: '0', transform: 'translate(-72%, -62%) scale(0.5)' },
+          '100%': { opacity: '1', transform: 'translate(-50%,-40%) scale(1)' }
+        },
+        shimmer: {
+          from: { backgroundPosition: '0 0' },
+          to: { backgroundPosition: '-200% 0' }
+        },
+        moveHorizontal: {
+          '0%': { transform: 'translateX(-50%) translateY(-10%)' },
+          '50%': { transform: 'translateX(50%) translateY(10%)' },
+          '100%': { transform: 'translateX(-50%) translateY(-10%)' }
+        },
+        moveInCircle: {
+          '0%': { transform: 'rotate(0deg)' },
+          '50%': { transform: 'rotate(180deg)' },
+          '100%': { transform: 'rotate(360deg)' }
+        },
+        moveVertical: {
+          '0%': { transform: 'translateY(-50%)' },
+          '50%': { transform: 'translateY(50%)' },
+          '100%': { transform: 'translateY(-50%)' }
+        },
+        scroll: {
+          to: { transform: 'translate(calc(-50% - 0.5rem))' }
+        }
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        spotlight: 'spotlight 2s ease .75s 1 forwards',
+        shimmer: 'shimmer 2s linear infinite',
+        first: 'moveVertical 30s ease infinite',
+        second: 'moveInCircle 20s reverse infinite',
+        third: 'moveInCircle 40s linear infinite',
+        fourth: 'moveHorizontal 40s ease infinite',
+        fifth: 'moveInCircle 20s ease infinite',
+        scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
+      }
+    }
   },
   plugins: [
     require("tailwindcss-animate"),
@@ -205,7 +163,7 @@ const config = {
           }),
           "bg-dot": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6"></circle></svg>`
             )}")`,
           }),
         },

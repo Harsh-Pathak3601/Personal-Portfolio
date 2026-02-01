@@ -9,23 +9,29 @@ import Typewriter from 'typewriter-effect'
 
 const Hero = () => {
   return (
-    <section id='Home' className="relative min-h-screen overflow-hidden pt-32">
-      {/* Spotlights */}
-      <Spotlight
-        className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-        fill="white"
-      />
-      <Spotlight
-        className="top-10 left-full h-[80vh] w-[50vw]"
-        fill="purple"
-      />
-      <Spotlight
-        className="top-28 left-80 h-[80vh] w-[50vw]"
-        fill="blue"
-      />
+    /* 1. FULL-WIDTH SHELL: 
+       The 'w-full' and 'bg-mesh-purple' now fill the whole screen 
+       because the parent container in page.tsx is no longer restricted.
+    */
+    <section id='Home' className="relative w-full min-h-screen overflow-hidden pt-32 bg-mesh-purple">
+      
+      {/* Spotlights - Integrated with Obsidian Purple Theme */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="white"
+        />
+        <Spotlight
+          className="top-10 left-full h-[80vh] w-[50vw]"
+          fill="hsl(var(--primary))"
+        />
+        <Spotlight
+          className="top-28 left-80 h-[80vh] w-[50vw]"
+          fill="hsl(var(--purple-glow))"
+        />
+      </div>
 
-     
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+     <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex min-h-[75vh] flex-col md:flex-row items-center justify-between gap-16">
 
       
@@ -65,8 +71,7 @@ const Hero = () => {
                 <p className="text-center text-white/70 text-sm sm:text-base md:text-lg mb-8 max-w-xl leading-relaxed">
                  Building scalable, high-performance web applications with clean backend logic and intuitive UIs.
                 </p>
-                
-             <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
   
   <a href="#projects" className="flex justify-center sm:w-[200px]">
     <MagicButton
@@ -97,21 +102,25 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT — IMAGE */}
+          {/* RIGHT — IMAGE with Dynamic Obsidian Glow */}
           <div className="flex-1 flex justify-center md:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full blur-2xl  " />
+            <div className="relative group">
+              {/* Dynamic halo that glows purple on hover */}
+              <div className="absolute inset-0 rounded-full bg-primary/20 blur-[60px]  group-hover:bg-primary/40 transition-all duration-700" />
+              
               <img
                 src="/harsh.jpeg"
                 alt="Harsh"
                 className="
-                  relative
+                 relative
                   w-[400px] h-[400px]
                   md:w-[400px] md:h-[400px]
                   rounded-full
-                 border border-sky-400/30 shadow-[0_0_25px_rgba(56,189,248,0.35)
+                  border-2 border-primary/30 
+                  shadow-[0_0_50px_rgba(168,85,247,0.2)]
                   object-fill
-                  md:left-[-50px]
+                  transition-transform duration-500 group-hover:scale-105
+                   md:left-[-50px]
 
                 "
               />
