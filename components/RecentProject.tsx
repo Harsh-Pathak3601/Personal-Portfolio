@@ -93,7 +93,7 @@ const RecentProjects = () => {
         <h1 className="text-white mb-3 text-3xl md:text-5xl font-bold">
           Selected <span className="text-primary">Projects</span>
         </h1>
-        <p className="text-muted-foreground italic text-base md:text-lg max-w-xl">
+        <p className="text-muted-foreground font-kaushan text-base md:text-lg max-w-xl">
           A showcase of my recent work and technical experiments.
         </p>
 

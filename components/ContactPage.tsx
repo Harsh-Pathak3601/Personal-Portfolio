@@ -92,6 +92,7 @@ const ContactPage = () => {
               <Info icon={<Phone size={22} />} label="Phone" value="+91 9867023601" />
             </div>
           </div>
+          
 
           {/* Right Side: Form */}
           <div className="w-full md:w-[58%] p-8 lg:p-12">
