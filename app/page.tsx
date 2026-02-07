@@ -5,7 +5,6 @@ import { AnimatePresence } from "framer-motion";
 import { navItems } from "@/data";
 import { Navbar } from "@/components/ui/Navbar";
 import { IntroLoader } from "@/components/ui/IntroLoader";
-import Stats from "@/components/Stats";
 import { Analytics } from "@vercel/analytics/next"
 
 // Lazy Load components
@@ -33,7 +32,6 @@ const Home = () => {
           <Navbar navItems={navItems} />
           <Hero />
           <Grid />
-          <Stats/>
           <RecentProject />
           <ContactPage />
           <Footer />
