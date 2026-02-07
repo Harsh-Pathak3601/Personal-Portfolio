@@ -204,7 +204,7 @@ const RecentProjects = () => {
       </div>
 
       <div className="mt-20 pb-10">
-        <Link href="https://github.com/Harsh-Pathak3601" target="_blank" className="group flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500">
+        <Link href="https://github.com/Harsh-Pathak3601?tab=repositories" target="_blank" className="group flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500">
           <span className="text-white/80 text-sm font-semibold">View Full Archive</span>
           <ArrowUpRight className="w-4 h-4 text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </Link>
