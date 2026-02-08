@@ -7,12 +7,13 @@ import { Navbar } from "@/components/ui/Navbar";
 import { IntroLoader } from "@/components/ui/IntroLoader";
 import { Analytics } from "@vercel/analytics/next"
 
+
 // Lazy Load components
 const Hero = dynamic(() => import("@/components/Hero"), { ssr: true });
-const Grid = dynamic(() => import("@/components/Grid"), { ssr: true });
 const RecentProject = dynamic(() => import("@/components/RecentProject"), { ssr: true });
 const ContactPage = dynamic(() => import("@/components/ContactPage"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
+const Stats = dynamic(() => import("@/components/Stats"), { ssr: true });
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,7 @@ const Home = () => {
           <Analytics/>
           <Navbar navItems={navItems} />
           <Hero />
-          <Grid />
+          <Stats/>
           <RecentProject />
           <ContactPage />
           <Footer />

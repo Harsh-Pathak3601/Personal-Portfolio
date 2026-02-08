@@ -5,78 +5,56 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
+export const statsItems = [
   {
     id: 1,
-    title: "The Making of an Engineer⭐ ",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] text-purple",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
-    img: "/Pokemon.webp",
-    spareImg: "",
-  },
-  {
-  
-  id: 2,
-  title: "GitHub Overview",
-  description: "",
-  className:
-    "lg:col-span-2 md:col-span-3 md:row-span-2 text-white overlapping-none",
-  imgClassName: "",
-  titleClassName: "justify-center items-center pt-8 z-20",
-  img: "",
-  spareImg: "",
-
-
-  },
-  {
-    id: 3,
-title: "LeetCode Overview",
-description: "",
-className: "lg:col-span-2 md:col-span-3 md:row-span-2 text-white",
-imgClassName: "",
-titleClassName: "justify-center text-center",
-img: "",
-spareImg: "",
-
-  },
- {
-  id: 4,
-  title: "Most Used languages",
-  description: "",
-  className: "lg:col-span-2 md:col-span-3 md:row-span-1 text-white",
-  imgClassName: "",
-  titleClassName: "justify-start text-center pt-4 md:pt-4",
-  img: "",
-  spareImg: "",
-},
-
-  
-
-  {
-    id: 5,
-    title: "My Tech Stack",
+    title: "My Tech Stacks",
     description: "Tools I use to build seamless digital experiences",
-   className: "md:col-span-3 md:row-span-2 lg:col-span-3 lg:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center  ",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
-  },
-
-{
-    id: 6,
-    title: "Interactive Console",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center items-center w-full text-center", 
+    className: "md:col-span-12 lg:col-span-8 h-[320px]",
     img: "",
     spareImg: "",
   },
+  {
+    id: 2,
+    title: "Virtual CLI",
+    description: "Execute commands to interface.",
+    className: "md:col-span-12 lg:col-span-4 h-[320px]",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 3,
+    title: "GitHub Impact",
+    description: "Overall repository statistics",
+    className: "md:col-span-12 lg:col-span-6 h-[340px]",
+    img: "https://github-readme-stats-fast.vercel.app/api?username=Harsh-Pathak3601&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D021400&title_color=a855f7&icon_color=a855f7",
+    spareImg: "https://github.com/Harsh-Pathak3601",
+  },
+  {
+    id: 4,
+    title: "LeetCode DSA",
+    description: "Problem solving metrics",
+    className: "md:col-span-12 lg:col-span-6 h-[340px]",
+    img: "https://leetcard.jacoblin.cool/Pathak?theme=dark&font=Karma&ext=contest",
+    spareImg: "https://leetcode.com/u/Pathak",
+  },
+  {
+    id: 5,
+    title: "Language Stack",
+    description: "Language distribution",
+    className: "md:col-span-12 lg:col-span-5 h-[340px]",
+    img: "https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Harsh-Pathak3601&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D021400&title_color=a855f7",
+    spareImg: "",
+  },
+ {
+    id: 6,
+    title: "Contribution Activity",
+    description: "Yearly GitHub commit graph",
+    className: "md:col-span-12 lg:col-span-7 h-[340px]",
+    img: "", 
+    spareImg: "https://github.com/Harsh-Pathak3601",
+  },
 ];
-
   
  export const projects = [
   {
