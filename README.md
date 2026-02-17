@@ -5,6 +5,7 @@
 A fast, accessible, and interactive developer portfolio built with `Next.js` (App Router), `React` 19 and `TypeScript`. It highlights modern UI patterns, small 3D scenes and a serverless contact flow via EmailJS.
 
 ---
+
 ## 🎯 Quick links
 - Live: https://harsh-pathak-portfolio.vercel.app
 - Source: `./` (this repository)
@@ -19,40 +20,45 @@ A fast, accessible, and interactive developer portfolio built with `Next.js` (Ap
 
 ---
 
-## � What `app/page.tsx` renders (single Home route)
+## 🔍 What the Home route renders
 
-This project uses one App Router route: `app/page.tsx` (the Home page). The Home page composes multiple sections — edit or extend these files to change the corresponding section.
+The app uses a single App Router page (`app/page.tsx`) that composes the visible sections below. Edit the referenced components to change each section.
 
-| Section | File | Anchor / ID | Purpose |
-|---|---|---:|---|
-| Intro loader | `components/ui/IntroLoader.tsx` | (startup) | Animated intro/splash that transitions into the page.
-| Floating Navbar | `components/ui/Navbar.tsx` | global (fixed) | Floating, auto-hide nav with desktop pill-links and mobile menu; reads `navItems` from `data/index.ts`.
-| Hero / Spotlight | `components/Hero.tsx` + `components/ui/Spotlight.tsx` | `#Home` | Main hero with animated headline, typewriter roles, CTA buttons and profile image.
-| Skills / Snapshot | `components/Stats.tsx` | (in-page) | Skills carousel, interactive virtual terminal modal and GitHub activity calendar.
-| Projects showcase | `components/RecentProject.tsx` | `#projects` | Stack/grid project carousel with drag, live/demo and repo links.
-| Contact form | `components/ContactPage.tsx` | `#contact` | EmailJS-powered contact form (client-side). Uses `process.env.NEXT_PUBLIC_EMAILJS_*`.
-| Footer | `components/Footer.tsx` | (global) | Footer, social links and quick anchors.
+1. Intro loader — `components/ui/IntroLoader.tsx`
+   - Startup splash that transitions into the Home view.
+2. Floating Navbar — `components/ui/Navbar.tsx`
+   - Global, auto-hide navigation; reads `navItems` from `data/index.ts`.
+3. Hero / Spotlight — `components/Hero.tsx` + `components/ui/Spotlight.tsx`
+   - Animated headline, typewriter roles, CTAs and profile visual.
+4. Skills / Snapshot — `components/Stats.tsx`
+   - Skills carousel, virtual terminal demo and GitHub activity calendar.
+5. Projects showcase — `components/RecentProject.tsx`
+   - Drag-enabled project carousel with live/demo and repo links.
+6. Contact form — `components/ContactPage.tsx`
+   - EmailJS-powered client-side contact flow (requires `NEXT_PUBLIC_EMAILJS_*` env vars).
+7. Footer — `components/Footer.tsx`
+   - Social links and quick anchors.
 
 ---
 
 ```
 portfolio/
 ├─ app/
-│  ├─ layout.tsx           # Global layout + metadata
-│  ├─ page.tsx             # Home route
-│  ├─ provider.tsx         # Theme / context providers
-│  └─ globals.css          # Global styles (Tailwind + base)
-├─ components/             # Page sections
-│  ├─ Hero.tsx
-│  ├─ RecentProject.tsx
-│  ├─ ContactPage.tsx
-│  └─ Footer.tsx
-├─ components/ui/          # Reusable primitives (buttons, navbar, loaders)
-├─ data/
-│  └─ index.ts             # All site content (projects, social, stats)
-├─ lib/                    # Utilities
-├─ public/                 # Static images & assets
-├─ utils/                  # small helpers (e.g. `cn.ts`)
+│  ├─ layout.tsx           # Global layout + metadata (fonts + ThemeProvider)
+│  ├─ page.tsx             # Home route — mounts IntroLoader, Navbar, Hero, Stats, Projects, Contact, Footer
+│  ├─ provider.tsx         # next-themes provider
+│  └─ globals.css          # Tailwind tokens & custom utilities
+├─ components/
+│  ├─ Hero.tsx             # Hero + spotlight + CTA
+│  ├─ RecentProject.tsx    # Projects carousel (stack/grid)
+│  ├─ ContactPage.tsx      # EmailJS contact form
+│  ├─ Stats.tsx            # Skills, virtual terminal, GitHub calendar
+│  └─ Footer.tsx           # Footer & social links
+├─ components/ui/          # UI primitives (Navbar, MagicButton, IntroLoader, Spotlight, TextGenerateEffect)
+├─ data/                   # `data/index.ts` — projects, navItems, stats, testimonials
+├─ lib/                    # Helpers (e.g. `cn()`)
+├─ public/                 # Static assets (images, icons)
+├─ utils/                  # duplicate `cn()` helper (consider consolidating)
 ├─ package.json
 ├─ tailwind.config.ts
 └─ README.md
@@ -62,49 +68,53 @@ Tip: keep all editable content inside `data/index.ts` — it's the single source
 
 ---
 
-## 🧰 Tech stack (high-level)
+## 🧰 Tech stack (short)
 
-| Layer | Primary packages | Purpose |
-|---|---:|---|
-| Framework | `Next.js` (App Router) | Routing, SSR/SSG, performance
-| UI + Styling | `Tailwind CSS` + utility components | Fast UI development, responsive design
-| Animations & 3D | `Framer Motion`, `three`, `@react-three/fiber` | Polished motion & immersive visuals
-| Forms & Contact | `@emailjs/browser` | Client-side email delivery (no backend)
-| Tooling | TypeScript, ESLint, PostCSS | Type safety & code quality
+- Framework: `Next.js` (App Router)
+- UI / styling: `Tailwind CSS` + utility components
+- Animations & 3D: `Framer Motion`, `three`, `@react-three/fiber`
+- Forms / contact: `@emailjs/browser` (client-side)
+- Tooling: TypeScript, ESLint, PostCSS
 
 ---
 
-## ⚙️ Scripts & shortcuts
+## ⚙️ Scripts
 
-| Command | What it does | Notes |
-|---|---|---|
-| `npm run dev` | Start dev server (http://localhost:3000) | Fast refresh + source maps
-| `npm run build` | Create optimized production build | Used by Vercel on deploy
-| `npm run start` | Serve production build | Run after `npm run build`
-| `npm run lint` | Run ESLint | Fix issues before PRs
+- `npm run dev` — start dev server (http://localhost:3000)
+- `npm run build` — create production build
+- `npm run start` — serve production build
+- `npm run lint` — run ESLint
 
 ---
 
 ## 🔑 Environment variables
+Create a `.env.local` in the project root and add the EmailJS keys below for the contact form to work locally:
 
-| Name | Required | Used in | Purpose |
-|---|:---:|---|---|
-| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | ✅ | `components/ContactPage.tsx` | EmailJS service id |
-| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | ✅ | `components/ContactPage.tsx` | EmailJS template id |
-| `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | ✅ | `components/ContactPage.tsx` | EmailJS public key |
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID` — EmailJS service ID
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` — EmailJS template ID
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` — EmailJS public key
 
-Create a `.env.local` in the project root and add these keys for the contact form to work locally.
+All three are required by `components/ContactPage.tsx`.
 
 ---
 
-## 🚀 Projects snapshot
+## 🚀 Notable projects (summary)
 
-| # | Project | Short description | Key tech | Live / Repo |
-|---:|---|---|---|---|
-| 1 | DragonBall Z | Interactive 3D experience with energy effects | React, Three.js, Framer | Live: `https://ui.DragonBall.com` • Repo: `Harsh-Pathak3601/DragonBall-Z` |
-| 2 | Pokemon | Responsive themed UI with Cloudinary media | Next.js, Tailwind, Stream | Live: `https://ui.Pokemon.com` • Repo: `Harsh-Pathak3601/Pokemon-Web` |
-| 3 | Idaten Jump | Dynamic, speed-focused UI interactions | React, Three.js | Live: `https://ui.Idaten-Jump.com` • Repo: `Harsh-Pathak3601/Idaten-Jump` |
-| 4 | Reyukando | Premium site recreation with GSAP + Three | Next.js, GSAP, Three | Live: `https://ui.Reyukando.com` • Repo: `Harsh-Pathak3601/Reyukando` |
+1. DragonBall Z — interactive 3D experience with energy effects
+   - Tech: React, Three.js, Framer Motion
+   - Live: https://ui.DragonBall.com • Repo: Harsh-Pathak3601/DragonBall-Z
+
+2. Pokemon — themed responsive UI with Cloudinary media
+   - Tech: Next.js, Tailwind
+   - Live: https://ui.Pokemon.com • Repo: Harsh-Pathak3601/Pokemon-Web
+
+3. Idaten Jump — speed-focused UI interactions
+   - Tech: React, Three.js
+   - Live: https://ui.Idaten-Jump.com • Repo: Harsh-Pathak3601/Idaten-Jump
+
+4. Reyukando — premium site recreation with GSAP + Three
+   - Tech: Next.js, GSAP, Three
+   - Live: https://ui.Reyukando.com • Repo: Harsh-Pathak3601/Reyukando
 
 ---
 
@@ -129,37 +139,27 @@ After updating, restart `npm run dev` or wait for HMR to pick up the change.
 
 ---
 
-## ✅ Contribution & PR checklist
-
-| Step | Command / Action | Why |
-|---:|---|---|
-| 1 | Fork + branch | Isolate changes |
-| 2 | `npm install` + `npm run dev` | Run locally |
-| 3 | `npm run lint` | Keep code consistent |
-| 4 | Add tests / screenshots (if UI) | Prevent regressions |
-| 5 | Open PR & add description | Reviewable changes |
+## ✅ Contributing & PR checklist
+1. Fork the repo and create a branch
+2. Run `npm install` and `npm run dev`
+3. Run `npm run lint` and fix issues
+4. Add tests / screenshots for UI changes
+5. Open a PR with a clear description
 
 ---
 
-## 🛠 Roadmap / suggestions
-
-| Feature | Priority | Status |
-|---|---:|---|
-| Add CI (lint/build) | High | Planned |
-| Add unit / integration tests | Medium | Planned |
-| Add `LICENSE` (MIT) | High | Suggested |
-| Add visual screenshots / OG images | Low | Suggested |
+## 🛠 Roadmap & suggestions
+- Add CI (lint/build) — high priority
+- Add unit / integration tests — planned
+- Add `LICENSE` (MIT) — suggested
+- Add visual screenshots / OG images — optional
 
 ---
 
 ## 🐞 Common issues & fixes
-
-| Symptom | Likely cause | Fix |
-|---|---|---|
-| Contact form fails | Missing/incorrect EmailJS env vars | Verify `NEXT_PUBLIC_EMAILJS_*` and EmailJS template
-| Build fails on CI | Node version mismatch | Ensure Node >= 18 in CI config
-| Missing images | Wrong `public/` path | Confirm file exists in `public/` and path in `data/index.ts`
-
+- Contact form fails → Check `NEXT_PUBLIC_EMAILJS_*` env vars and EmailJS template
+- Build fails on CI → Ensure Node >= 18 in CI configuration
+- Missing images → Verify files exist in `public/` and paths in `data/index.ts`
 ---
 
 ## 📦 Deployment
