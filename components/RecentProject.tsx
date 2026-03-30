@@ -21,7 +21,7 @@ const RecentProjects = () => {
         borderColor: "rgba(168, 85, 247, 0.6)", 
         boxShadow: "0px 0px 40px -10px rgba(168, 85, 247, 0.4)"
       }}
-      className="relative flex flex-col rounded-[2rem] overflow-hidden border border-white/[0.08] bg-[#10131e] group transition-all duration-500 shadow-2xl w-full max-w-[500px]"
+      className="relative flex flex-col rounded-[2rem] overflow-hidden border border-white/[0.08] bg-[#10131e] group shadow-2xl w-full max-w-[500px]"
     >
       <div className="relative aspect-[16/9] overflow-hidden m-3 rounded-[1.5rem]">
         <img
@@ -56,7 +56,7 @@ const RecentProjects = () => {
 
         <div className="flex flex-wrap justify-center gap-2 mb-6 h-[64px] overflow-hidden">
           {item.iconLists.map((icon: string, i: number) => (
-            <div key={i} className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md h-fit">
+            <div key={i} className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 h-fit">
                <img src={icon} alt="tech" className="w-3.5 h-3.5 opacity-80" />
                <span className="text-[10px] font-medium text-primary uppercase tracking-wider">
                  {item.techNames ? item.techNames[i] : "Tech"}
@@ -139,23 +139,28 @@ const RecentProjects = () => {
                       return (
                         <motion.div
                           key={item.id}
-                          drag="x"
+                          drag={isCenter ? "x" : false}
                           dragConstraints={{ left: 0, right: 0 }}
+                          dragElastic={0.2}
                           onDragEnd={(_, info) => {
-                            if (info.offset.x > 100) handlePrev();
-                            else if (info.offset.x < -100) handleNext();
+                            if (info.offset.x > 80) handlePrev();
+                            else if (info.offset.x < -80) handleNext();
                           }}
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{
                             opacity: isCenter ? 1 : 0.4,
                             scale: isCenter ? 1 : 0.85,
-                            x: isCenter ? 0 : isNext ? 160 : -160,
+                            x: isCenter ? 0 : isNext ? 120 : -120,
                             zIndex: isCenter ? 30 : 10,
-                            rotateY: isCenter ? 0 : isNext ? -15 : 15,
+                            rotateY: isCenter ? 0 : isNext ? -10 : 10,
                           }}
                           exit={{ opacity: 0, scale: 0.5 }}
-                          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                          className="absolute w-full max-w-[400px] cursor-grab active:cursor-grabbing touch-none"
+                          transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                          className={`absolute w-full max-w-[400px] ${isCenter ? "cursor-grab active:cursor-grabbing" : ""} touch-none`}
+                          style={{
+                            pointerEvents: isCenter ? "auto" : "none",
+                            willChange: "transform, opacity"
+                          }}
                         >
                           <ProjectCard item={item} />
                         </motion.div>
