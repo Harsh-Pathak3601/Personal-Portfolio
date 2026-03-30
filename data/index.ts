@@ -59,13 +59,13 @@ export const statsItems = [
  export const projects = [
   {
     id: 1,
-    title: "DragonBall Z",
-    des: "An interactive Dragon Ball Z–inspired experience showcasing powerful energy effects and immersive 3D animations.",
-    img: "/DragonBall.jpg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    techNames: ["React", "Tailwind", "TypeScript", "Three.js", "Framer"], 
-    link: "https://ui.DragonBall.com",
-    github: "https://github.com/Harsh-Pathak3601/DragonBall-Z",
+    title: "CivixShield",
+    des: "Defend Against Next-Gen Social Engineering,Phising,And Deepfakes Before they Breach Your Digital Timeline.",
+    img: "/civixShield.jpeg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    techNames: ["Next.js", "Tailwind", "TypeScript", "Three.js", "Framer"], 
+    link: "https://civix-shield-final.vercel.app",
+    github: "https://github.com/Harsh-Pathak3601/CivixShield-final",
   },
   {
     id: 2,
