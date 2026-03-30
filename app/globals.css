@@ -49,7 +49,7 @@ body {
   .dark {
     /* The "Better than Piyush" Secret: Obsidian Purple Background */
     /* Lightness at 2% makes it deep, but Hue at 265 adds the premium purple tint */
-    --background: 265 45% 2%; 
+    --background: 265 45% 2%;
     --foreground: 270 15% 98%;
 
     --card: 265 45% 4%;
@@ -91,9 +91,11 @@ body {
   * {
     @apply border-border !scroll-smooth;
   }
+
   body {
     @apply bg-background text-foreground antialiased;
   }
+
   button {
     @apply active:scale-95 transition-transform duration-200 outline-none;
   }

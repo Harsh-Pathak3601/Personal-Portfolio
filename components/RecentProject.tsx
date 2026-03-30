@@ -11,23 +11,39 @@ const RecentProjects = () => {
   const [viewMode, setViewMode] = useState<"stack" | "grid">("stack");
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Lightweight swipe handling without polling physics
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const distance = touchStart - touchEnd;
+
+    // Minimum swipe distance
+    if (distance > 50) handleNext();
+    else if (distance < -50) handlePrev();
+
+    setTouchStart(null);
+  };
+
   const handleNext = () => setCurrentIndex((prev) => (prev + 1) % projects.length);
   const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
   const ProjectCard = ({ item }: { item: any }) => (
-    <motion.div
-      whileHover={{ 
-        y: -5,
-        borderColor: "rgba(168, 85, 247, 0.6)", 
-        boxShadow: "0px 0px 40px -10px rgba(168, 85, 247, 0.4)"
-      }}
-      className="relative flex flex-col rounded-[2rem] overflow-hidden border border-white/[0.08] bg-[#10131e] group shadow-2xl w-full max-w-[500px]"
+    <div
+      className="relative flex flex-col rounded-[2rem] overflow-hidden border border-white/[0.08] hover:border-purple-500 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] transition-all duration-500 bg-[#10131e] group shadow-2xl w-full max-w-[500px]"
     >
       <div className="relative aspect-[16/9] overflow-hidden m-3 rounded-[1.5rem]">
         <img
           src={item.img}
           alt={item.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
       </div>
 
@@ -39,7 +55,7 @@ const RecentProjects = () => {
             </button>
           )}
 
-          <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight flex-1">
+          <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-purple-400 transition-colors duration-500 tracking-tight flex-1">
             {item.title}
           </h2>
 
@@ -56,8 +72,8 @@ const RecentProjects = () => {
 
         <div className="flex flex-wrap justify-center gap-2 mb-6 h-[64px] overflow-hidden">
           {item.iconLists.map((icon: string, i: number) => (
-            <div key={i} className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 h-fit">
-               <img src={icon} alt="tech" className="w-3.5 h-3.5 opacity-80" />
+            <div key={i} className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 h-fit w-max">
+               <img src={icon} alt="tech" loading="lazy" className="w-3.5 h-3.5 opacity-80" />
                <span className="text-[10px] font-medium text-primary uppercase tracking-wider">
                  {item.techNames ? item.techNames[i] : "Tech"}
                </span>
@@ -67,8 +83,8 @@ const RecentProjects = () => {
 
         <div className="w-full flex items-center justify-between pt-4 border-t border-white/5">
           <div className="flex items-center gap-3 text-muted-foreground/60">
-            <div className="flex items-center gap-1 text-[11px]"><Star size={14} className="text-yellow-500/50" /> 0</div>
-            <div className="flex items-center gap-1 text-[11px]"><GitFork size={14} /> 0</div>
+             <div className="flex items-center gap-1 text-[11px]"><Star size={14} className="text-yellow-500/50" /> 0</div>
+             <div className="flex items-center gap-1 text-[11px]"><GitFork size={14} /> 0</div>
           </div>
           <div className="flex items-center gap-2">
             <Link href={item.github || "#"} target="_blank" className="p-2.5 rounded-full bg-white/5 text-white/40 hover:text-white transition-all border border-white/5">
@@ -80,7 +96,7 @@ const RecentProjects = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 
   return (
@@ -127,8 +143,11 @@ const RecentProjects = () => {
               </div>
 
               <div className="relative w-full flex flex-col items-center justify-center perspective-1000">
-                <div className="relative w-full flex items-center justify-center h-[520px]">
-                  <AnimatePresence mode="popLayout">
+                <div 
+                   className="relative w-full flex items-center justify-center h-[520px]"
+                   onTouchStart={handleTouchStart}
+                   onTouchEnd={handleTouchEnd}
+                >
                     {projects.map((item, index) => {
                       const isCenter = index === currentIndex;
                       const isNext = index === (currentIndex + 1) % projects.length;
@@ -136,37 +155,45 @@ const RecentProjects = () => {
                       
                       if (!isCenter && !isNext && !isPrev) return null;
 
+                      // Standard CSS transition classes without physics engine drag
+                      // Transform definitions matching the original intent but purely CSS-driven
+                      let transformStyle = '';
+                      let opacityStyle = 0;
+                      let zIndexStyle = 10;
+
+                      if (isCenter) {
+                         transformStyle = 'translateX(0px) scale(1) rotateY(0deg)';
+                         opacityStyle = 1;
+                         zIndexStyle = 30;
+                      } else if (isNext) {
+                         transformStyle = 'translateX(120px) scale(0.85) rotateY(-10deg)';
+                         opacityStyle = 0.4;
+                         zIndexStyle = 10;
+                      } else if (isPrev) {
+                         transformStyle = 'translateX(-120px) scale(0.85) rotateY(10deg)';
+                         opacityStyle = 0.4;
+                         zIndexStyle = 10;
+                      }
+
                       return (
-                        <motion.div
+                        <div
                           key={item.id}
-                          drag={isCenter ? "x" : false}
-                          dragConstraints={{ left: 0, right: 0 }}
-                          dragElastic={0.2}
-                          onDragEnd={(_, info) => {
-                            if (info.offset.x > 80) handlePrev();
-                            else if (info.offset.x < -80) handleNext();
+                          className={`absolute w-full max-w-[400px] transition-all duration-500 ease-out ${isCenter ? 'cursor-grab active:cursor-grabbing hover:scale-[1.02]' : 'cursor-pointer'}`}
+                          onClick={() => {
+                              if (isNext) handleNext();
+                              else if (isPrev) handlePrev();
                           }}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{
-                            opacity: isCenter ? 1 : 0.4,
-                            scale: isCenter ? 1 : 0.85,
-                            x: isCenter ? 0 : isNext ? 120 : -120,
-                            zIndex: isCenter ? 30 : 10,
-                            rotateY: isCenter ? 0 : isNext ? -10 : 10,
-                          }}
-                          exit={{ opacity: 0, scale: 0.5 }}
-                          transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                          className={`absolute w-full max-w-[400px] ${isCenter ? "cursor-grab active:cursor-grabbing" : ""} touch-none`}
                           style={{
-                            pointerEvents: isCenter ? "auto" : "none",
+                            transform: transformStyle,
+                            opacity: opacityStyle,
+                            zIndex: zIndexStyle,
                             willChange: "transform, opacity"
                           }}
                         >
                           <ProjectCard item={item} />
-                        </motion.div>
+                        </div>
                       );
                     })}
-                  </AnimatePresence>
                 </div>
 
                 <div className="flex gap-2.5 items-center justify-center mt-8">
@@ -195,7 +222,6 @@ const RecentProjects = () => {
               key="grid" 
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
-              /* CHANGED: md:grid-cols-2 lg:grid-cols-2 and max-w-5xl for 2x2 feel */
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 w-full max-w-5xl py-10 mx-auto"
             >
               {projects.map((item) => (

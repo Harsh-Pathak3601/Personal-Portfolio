@@ -14,12 +14,14 @@ const RecentProject = dynamic(() => import("@/components/RecentProject"), { ssr:
 const ContactPage = dynamic(() => import("@/components/ContactPage"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 const Stats = dynamic(() => import("@/components/Stats"), { ssr: true });
+const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor").then(m=>m.CustomCursor), { ssr: false });
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <main className="relative bg-background flex flex-col items-center overflow-x-hidden w-full min-h-screen">
+      <CustomCursor />
       {/* 1. Intro Screen Logic */}
       <AnimatePresence mode="wait">
         {isLoading && (
@@ -29,10 +31,10 @@ const Home = () => {
 
       {!isLoading && (
         <div className="w-full flex flex-col items-center">
-          <Analytics/>
+          <Analytics />
           <Navbar navItems={navItems} />
           <Hero />
-          <Stats/>
+          <Stats />
           <RecentProject />
           <ContactPage />
           <Footer />

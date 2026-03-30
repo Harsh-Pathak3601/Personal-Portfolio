@@ -204,7 +204,10 @@ export default function ActivityPage() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-[#0D0214] py-16 px-4 md:px-12 lg:px-20 relative overflow-hidden text-white">
+    <main 
+      className="min-h-screen w-full bg-[#0D0214] py-16 px-4 md:px-12 lg:px-20 relative overflow-hidden text-white"
+      style={{ contentVisibility: "auto" }}
+    >
       <TerminalModal isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
 
       <div className="mx-auto max-w-[1300px] relative z-10">
@@ -274,8 +277,11 @@ export default function ActivityPage() {
       </div>
 
       <style jsx>{`
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .animate-scroll { animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+        .animate-scroll { 
+          animation: scroll 40s linear infinite; 
+          will-change: transform;
+        }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.2); border-radius: 10px; }
       `}</style>

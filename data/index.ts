@@ -46,24 +46,24 @@ export const statsItems = [
     img: "https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Harsh-Pathak3601&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D021400&title_color=a855f7",
     spareImg: "",
   },
- {
+  {
     id: 6,
     title: "Contribution Activity",
     description: "Yearly GitHub commit graph",
     className: "md:col-span-12 lg:col-span-7 h-[340px]",
-    img: "", 
+    img: "",
     spareImg: "https://github.com/Harsh-Pathak3601",
   },
 ];
-  
- export const projects = [
+
+export const projects = [
   {
     id: 1,
     title: "CivixShield",
     des: "Defend Against Next-Gen Social Engineering,Phising,And Deepfakes Before they Breach Your Digital Timeline.",
     img: "/civixShield.jpeg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    techNames: ["Next.js", "Tailwind", "TypeScript", "Three.js", "Framer"], 
+    techNames: ["Next.js", "Tailwind", "TypeScript", "Three.js", "Framer"],
     link: "https://civix-shield-final.vercel.app",
     github: "https://github.com/Harsh-Pathak3601/CivixShield-final",
   },
