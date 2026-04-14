@@ -126,7 +126,7 @@ export const Navbar = ({
 
           {/* Desktop Resume Button */}
           <Link
-            href="/resume.pdf"
+            href="/Harsh_Pathak_Resume.pdf"
             target="_blank"
             className="ml-2 flex items-center gap-2 px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-lg shadow-primary/20"
           >
@@ -160,7 +160,7 @@ export const Navbar = ({
               
               {/* Mobile Resume Button */}
               <Link
-                href="/resume.pdf"
+                href="/Harsh_Pathak_Resume.pdf"
                 target="_blank"
                 className="flex items-center justify-center gap-3 py-4 mt-2 rounded-2xl bg-primary text-primary-foreground font-bold tracking-widest uppercase text-sm"
               >

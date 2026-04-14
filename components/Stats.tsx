@@ -88,8 +88,8 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     if (cmd === "resume") {
       response = (
         <div className="mt-2 p-3">
-          <a href="/resume.pdf" target="_blank" className="text-purple-400 font-bold hover:underline flex items-center gap-2">
-            ➜ DOWNLOAD_RESUME.pdf
+          <a href="/Harsh_Pathak_Resume.pdf" target="_blank" className="text-purple-400 font-bold hover:underline flex items-center gap-2">
+            ➜ DOWNLOAD_Harsh_Pathak_Resume.pdf
           </a>
         </div>
       );

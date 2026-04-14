@@ -82,7 +82,7 @@ const Hero = () => {
   </a>
 
   <a
-    href="YOUR_RESUME_LINK_HERE"
+    href="/Harsh_Pathak_Resume.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="flex justify-center sm:w-[200px]"
