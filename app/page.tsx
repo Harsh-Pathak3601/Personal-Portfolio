@@ -14,7 +14,7 @@ const RecentProject = dynamic(() => import("@/components/RecentProject"), { ssr:
 const ContactPage = dynamic(() => import("@/components/ContactPage"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 const Stats = dynamic(() => import("@/components/Stats"), { ssr: true });
-const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor").then(m=>m.CustomCursor), { ssr: false });
+const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor").then(m => m.CustomCursor), { ssr: false });
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);

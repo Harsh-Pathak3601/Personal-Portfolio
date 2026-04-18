@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import {GitHubCalendar} from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 import { ImCancelCircle } from "react-icons/im";
-import { 
-  SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, 
-  SiNodedotjs, SiMongodb, SiPostgresql, SiPython, 
+import {
+  SiReact, SiNextdotjs, SiTailwindcss, SiTypescript,
+  SiNodedotjs, SiMongodb, SiPostgresql, SiPython,
   SiDocker, SiFigma, SiGit, SiExpress, SiCplusplus,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
-import { statsItems } from "@/data"; 
+import { statsItems } from "@/data";
 
 /*SKILLS DATA*/
 const skills = [
@@ -63,7 +63,7 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isOpen) { setInput(""); document.body.style.overflow = "hidden"; } 
+    if (isOpen) { setInput(""); document.body.style.overflow = "hidden"; }
     else { document.body.style.overflow = "unset"; }
   }, [isOpen]);
 
@@ -80,7 +80,7 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     if (cmd === "exit" || cmd === "close") { onClose(); return; }
 
     let response: any = `ERR: Protocol '${cmd}' not recognized.`;
-    
+
     if (cmd === "help") response = "Commands: bio, skills, socials,resume, clear, exit";
     if (cmd === "bio") response = "Harsh Pathak: Full Stack Engineer specializing in scalable web architectures.";
     if (cmd === "skills") response = "STACK: Next.js, Python, Docker, Java, TypeScript, MongoDB.";
@@ -94,7 +94,7 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
         </div>
       );
     }
-    
+
     // Socials Links
     if (cmd === "socials") {
       response = (
@@ -114,12 +114,12 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     }
     setInput("");
   };
-   
-  
+
+
   return (
     <div className="fixed inset-0 z-[9999] bg-[#0D0214] flex flex-col items-center justify-center p-4 md:p-10 font-mono text-white">
-       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(147,51,234,0.05)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] z-20 opacity-30" />
-       <div className="w-full max-w-6xl h-[85vh] bg-[#020617]/95 rounded-3xl border border-purple-500/30 flex flex-col shadow-[0_0_100px_rgba(168,85,247,0.15)] relative z-10 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(147,51,234,0.05)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] z-20 opacity-30" />
+      <div className="w-full max-w-6xl h-[85vh] bg-[#020617]/95 rounded-3xl border border-purple-500/30 flex flex-col shadow-[0_0_100px_rgba(168,85,247,0.15)] relative z-10 overflow-hidden">
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/5 relative">
           <div className="flex gap-2 z-30">
             <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -154,13 +154,13 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
               <span>➜</span>
               <span className="whitespace-nowrap">admin@harsh:~$</span>
             </div>
-            <input 
-              autoFocus 
-              value={input} 
-              onChange={(e) => setInput(e.target.value)} 
-              className="bg-transparent outline-none flex-1 text-white text-xl caret-purple-500" 
-              spellCheck={false} 
-              autoComplete="off" 
+            <input
+              autoFocus
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="bg-transparent outline-none flex-1 text-white text-xl caret-purple-500"
+              spellCheck={false}
+              autoComplete="off"
             />
           </form>
         </div>
@@ -171,7 +171,7 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
 
 /*CARD WRAPPER*/
 const CardWrapper = ({ item, children, onClick }: { item: any; children?: React.ReactNode; onClick?: () => void }) => (
-  <div 
+  <div
     onClick={onClick}
     className={`group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#04071d] p-1 transition-all duration-700 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(168,85,247,0.1)] ${item.className}`}
   >
@@ -204,7 +204,7 @@ export default function ActivityPage() {
   };
 
   return (
-    <main 
+    <section id="about"
       className="min-h-screen w-full bg-[#0D0214] py-16 px-4 md:px-12 lg:px-20 relative overflow-hidden text-white"
       style={{ contentVisibility: "auto" }}
     >
@@ -212,7 +212,7 @@ export default function ActivityPage() {
 
       <div className="mx-auto max-w-[1300px] relative z-10">
         <header className="mb-16 flex flex-col items-center text-center">
-           <h1 className="heading text-foreground">
+          <h1 className="heading text-foreground">
             Engineering <span className="text-primary">Snapshot</span>
           </h1>
           <p className="mt-3 text-sm sm:text-base md:text-lg lg:text-xl md:tracking-wider text-muted-foreground font-kaushan max-w-2xl mx-auto italic opacity-80">
@@ -222,10 +222,10 @@ export default function ActivityPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6">
           {statsItems.map((item) => (
-            <CardWrapper 
-                key={item.id} 
-                item={item} 
-                onClick={item.id === 2 ? () => setIsTerminalOpen(true) : undefined}
+            <CardWrapper
+              key={item.id}
+              item={item}
+              onClick={item.id === 2 ? () => setIsTerminalOpen(true) : undefined}
             >
               {item.id === 1 && (
                 <div className="relative flex overflow-hidden w-full group/marquee">
@@ -243,20 +243,20 @@ export default function ActivityPage() {
               {item.id === 2 && (
                 <div className="flex flex-col items-center gap-4 w-full px-4 cursor-pointer">
                   <TerminalPreview />
-                 <span className="text-purple-400 font-mono text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-center transition-all duration-300 group-hover:text-purple-300 group-hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
-        Click to Explore Harsh&apos;s Interactive Terminal
-      </span>
-      <div className="relative w-16 h-[1px] mt-2 bg-purple-500/20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500 to-transparent -translate-x-full animate-scan" />
-      </div>
+                  <span className="text-purple-400 font-mono text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-center transition-all duration-300 group-hover:text-purple-300 group-hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">
+                    Click to Explore Harsh&apos;s Interactive Terminal
+                  </span>
+                  <div className="relative w-16 h-[1px] mt-2 bg-purple-500/20 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500 to-transparent -translate-x-full animate-scan" />
+                  </div>
                 </div>
               )}
 
               {/* GitHub Calendar (ID 6) */}
               {item.id === 6 ? (
                 <div className="w-full flex justify-center py-4 scale-[0.8] md:scale-100 transition-all duration-500 group-hover:brightness-110">
-                  <GitHubCalendar 
-                    username="Harsh-Pathak3601" 
+                  <GitHubCalendar
+                    username="Harsh-Pathak3601"
                     colorScheme="dark"
                     fontSize={12}
                     blockSize={11}
@@ -285,6 +285,6 @@ export default function ActivityPage() {
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.2); border-radius: 10px; }
       `}</style>
-    </main>
+    </section>
   );
 }
