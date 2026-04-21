@@ -9,11 +9,8 @@ import Typewriter from 'typewriter-effect'
 
 const Hero = () => {
   return (
-    /* 1. FULL-WIDTH SHELL: 
-       The 'w-full' and 'bg-mesh-purple' now fill the whole screen 
-       because the parent container in page.tsx is no longer restricted.
-    */
-    <section id='Home' className="relative w-full min-h-screen overflow-hidden pt-32 bg-mesh-purple">
+   
+   <section id='Home' className="relative w-full min-h-screen overflow-hidden pt-32 bg-mesh-purple">
       
       {/* Spotlights - Integrated with Obsidian Purple Theme */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
