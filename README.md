@@ -1,184 +1,146 @@
-# Harsh Pathak — Interactive Developer Portfolio
+# 🚀 Harsh Pathak — Full-Stack Developer Portfolio
 
-[![Live Demo](https://img.shields.io/badge/live-Vercel-000000?logo=vercel)](https://harsh-pathak-portfolio.vercel.app) [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org) [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)](https://www.typescriptlang.org) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+<div align="center">
 
-A fast, accessible, and interactive developer portfolio built with `Next.js` (App Router), `React` 19 and `TypeScript`. It highlights modern UI patterns, small 3D scenes and a serverless contact flow via EmailJS.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel)](https://harsh-pathak-portfolio.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF0055?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
 
----
+A premium, high-performance developer portfolio featuring immersive 3D elements, smooth animations, and a sleek modern aesthetic. Built with the latest tech stack to showcase professional expertise and projects.
 
-## 🎯 Quick links
-- Live: https://harsh-pathak-portfolio.vercel.app
-- Source: `./` (this repository)
-- Contact: `pathakharsh3601@gmail.com`
+[Explore Live](https://harsh-pathak-portfolio.vercel.app) • [Report Bug](https://github.com/Harsh-Pathak3601/Personal-Portfolio/issues) • [Request Feature](https://github.com/Harsh-Pathak3601/Personal-Portfolio/issues)
 
----
-
-## ✨ Why this project
-- Minimal, high-performance portfolio focused on UX and accessibility
-- Content-driven: change text/images via `data/index.ts` — no code changes for content updates
-- Progressive enhancement: 3D / animations are used sparingly and degrade gracefully
+</div>
 
 ---
 
-## 🔍 What the Home route renders
+## ✨ Key Features
 
-The app uses a single App Router page (`app/page.tsx`) that composes the visible sections below. Edit the referenced components to change each section.
-
-1. Intro loader — `components/ui/IntroLoader.tsx`
-   - Startup splash that transitions into the Home view.
-2. Floating Navbar — `components/ui/Navbar.tsx`
-   - Global, auto-hide navigation; reads `navItems` from `data/index.ts`.
-3. Hero / Spotlight — `components/Hero.tsx` + `components/ui/Spotlight.tsx`
-   - Animated headline, typewriter roles, CTAs and profile visual.
-4. Skills / Snapshot — `components/Stats.tsx`
-   - Skills carousel, virtual terminal demo and GitHub activity calendar.
-5. Projects showcase — `components/RecentProject.tsx`
-   - Drag-enabled project carousel with live/demo and repo links.
-6. Contact form — `components/ContactPage.tsx`
-   - EmailJS-powered client-side contact flow (requires `NEXT_PUBLIC_EMAILJS_*` env vars).
-7. Footer — `components/Footer.tsx`
-   - Social links and quick anchors.
+-   **🎨 Immersive UI**: Built with Tailwind CSS and Framer Motion for buttery-smooth transitions and a premium feel.
+-   **🌐 3D Integration**: Interactive 3D components powered by Three.js and React Three Fiber.
+-   **📱 Fully Responsive**: Optimized for all devices, from mobile to ultra-wide monitors.
+-   **⚡ High Performance**: Leveraging Next.js 16 and React 19 for lightning-fast load times and SEO optimization.
+-   **📊 Dynamic Stats**: Integrated GitHub activity, LeetCode metrics, and tech stack visualization.
+-   **✉️ Seamless Contact**: Integrated EmailJS for direct client-side communication.
+-   **🛠️ Easy Customization**: Centralized data management via `data/index.ts` — update content without touching the core logic.
 
 ---
 
-```
+## 🛠️ Tech Stack
+
+### Frontend
+-   **Framework**: Next.js 16 (App Router)
+-   **Library**: React 19
+-   **Styling**: Tailwind CSS
+-   **Animations**: Framer Motion, GSAP
+-   **3D**: Three.js, @react-three/fiber, @react-three/drei
+
+### Utilities & Tools
+-   **Language**: TypeScript
+-   **Contact**: @emailjs/browser
+-   **Icons**: Lucide React, React Icons
+-   **Theme**: next-themes (Dark/Light mode support)
+
+---
+
+## 📂 Project Structure
+
+```text
 portfolio/
-├─ app/
-│  ├─ layout.tsx           # Global layout + metadata (fonts + ThemeProvider)
-│  ├─ page.tsx             # Home route — mounts IntroLoader, Navbar, Hero, Stats, Projects, Contact, Footer
-│  ├─ provider.tsx         # next-themes provider
-│  └─ globals.css          # Tailwind tokens & custom utilities
-├─ components/
-│  ├─ Hero.tsx             # Hero + spotlight + CTA
-│  ├─ RecentProject.tsx    # Projects carousel (stack/grid)
-│  ├─ ContactPage.tsx      # EmailJS contact form
-│  ├─ Stats.tsx            # Skills, virtual terminal, GitHub calendar
-│  └─ Footer.tsx           # Footer & social links
-├─ components/ui/          # UI primitives (Navbar, MagicButton, IntroLoader, Spotlight, TextGenerateEffect)
-├─ data/                   # `data/index.ts` — projects, navItems, stats, testimonials
-├─ lib/                    # Helpers (e.g. `cn()`)
-├─ public/                 # Static assets (images, icons)
-├─ utils/                  # duplicate `cn()` helper (consider consolidating)
-├─ package.json
-├─ tailwind.config.ts
-└─ README.md
+├── app/                # Next.js App Router (pages & layout)
+├── components/         # React components
+│   ├── ui/             # Reusable UI primitives (Buttons, Loaders, etc.)
+│   ├── Hero.tsx        # Hero section with spotlight
+│   ├── Stats.tsx       # Tech stacks, CLI, and GitHub stats
+│   └── ...             # Other section components
+├── data/               # 💡 Single source of truth for content
+│   └── index.ts        # Edit this to change projects, skills, etc.
+├── public/             # Static assets (images, icons)
+├── lib/                # Utility functions (cn, etc.)
+├── tailwind.config.ts  # Design system & theme configuration
+└── package.json        # Dependencies & scripts
 ```
 
-Tip: keep all editable content inside `data/index.ts` — it's the single source of truth for projects, testimonials and stats.
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+-   Node.js 18+ 
+-   npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Harsh-Pathak3601/Personal-Portfolio.git
+   cd Personal-Portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up Environment Variables**
+   Create a `.env.local` file in the root directory:
+   ```env
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🧰 Tech stack (short)
+## 🔧 Customization Guide
 
-- Framework: `Next.js` (App Router)
-- UI / styling: `Tailwind CSS` + utility components
-- Animations & 3D: `Framer Motion`, `three`, `@react-three/fiber`
-- Forms / contact: `@emailjs/browser` (client-side)
-- Tooling: TypeScript, ESLint, PostCSS
+To update the portfolio content, you only need to modify **`data/index.ts`**. No need to dig into complex JSX/TSX files!
 
----
-
-## ⚙️ Scripts
-
-- `npm run dev` — start dev server (http://localhost:3000)
-- `npm run build` — create production build
-- `npm run start` — serve production build
-- `npm run lint` — run ESLint
-
----
-
-## 🔑 Environment variables
-Create a `.env.local` in the project root and add the EmailJS keys below for the contact form to work locally:
-
-- `NEXT_PUBLIC_EMAILJS_SERVICE_ID` — EmailJS service ID
-- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` — EmailJS template ID
-- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` — EmailJS public key
-
-All three are required by `components/ContactPage.tsx`.
-
----
-
-## 🚀 Notable projects (summary)
-
-1. DragonBall Z — interactive 3D experience with energy effects
-   - Tech: React, Three.js, Framer Motion
-   - Live: https://ui.DragonBall.com • Repo: Harsh-Pathak3601/DragonBall-Z
-
-2. Pokemon — themed responsive UI with Cloudinary media
-   - Tech: Next.js, Tailwind
-   - Live: https://ui.Pokemon.com • Repo: Harsh-Pathak3601/Pokemon-Web
-
-3. Idaten Jump — speed-focused UI interactions
-   - Tech: React, Three.js
-   - Live: https://ui.Idaten-Jump.com • Repo: Harsh-Pathak3601/Idaten-Jump
-
-4. Reyukando — premium site recreation with GSAP + Three
-   - Tech: Next.js, GSAP, Three
-   - Live: https://ui.Reyukando.com • Repo: Harsh-Pathak3601/Reyukando
-
----
-
-## ➕ How to add a new project (example)
-
-Open `data/index.ts` and add an object to the `projects` array — for example:
-
-```ts
-projects.push({
-  id: 99,
-  title: "New Project",
-  des: "Short description",
-  img: "/screenshot.webp",
-  iconLists: ["/react.svg", "/tail.svg"],
-  techNames: ["React", "Tailwind"],
-  link: "https://live.example.com",
-  github: "https://github.com/your/repo"
-});
+```typescript
+// Example: Adding a new project
+export const projects = [
+  {
+    id: 1,
+    title: "Project Name",
+    des: "A brief description of what you built.",
+    img: "/path-to-image.png",
+    iconLists: ["/next.svg", "/tail.svg"],
+    techNames: ["Next.js", "Tailwind"],
+    link: "https://live-link.com",
+    github: "https://github.com/your-username/repo",
+  },
+  // ...
+];
 ```
 
-After updating, restart `npm run dev` or wait for HMR to pick up the change.
+---
+
+## 📈 Featured Projects
+
+1.  **CivixShield**: Next-gen defense against social engineering and deepfakes.
+2.  **Pokemon**: Visually engaging Pokémon-themed project with modern UI.
+3.  **Idaten Jump**: High-energy speed-focused UI interactions.
+4.  **Reyukando**: Premium site recreation with GSAP & Three.js.
 
 ---
 
-## ✅ Contributing & PR checklist
-1. Fork the repo and create a branch
-2. Run `npm install` and `npm run dev`
-3. Run `npm run lint` and fix issues
-4. Add tests / screenshots for UI changes
-5. Open a PR with a clear description
+## 📬 Contact & Socials
+
+-   **Email**: [pathakharsh3601@gmail.com](mailto:pathakharsh3601@gmail.com)
+-   **GitHub**: [@Harsh-Pathak3601](https://github.com/Harsh-Pathak3601)
+-   **Portfolio**: [harsh-pathak-portfolio.vercel.app](https://harsh-pathak-portfolio.vercel.app)
 
 ---
 
-## 🛠 Roadmap & suggestions
-- Add CI (lint/build) — high priority
-- Add unit / integration tests — planned
-- Add `LICENSE` (MIT) — suggested
-- Add visual screenshots / OG images — optional
-
----
-
-## 🐞 Common issues & fixes
-- Contact form fails → Check `NEXT_PUBLIC_EMAILJS_*` env vars and EmailJS template
-- Build fails on CI → Ensure Node >= 18 in CI configuration
-- Missing images → Verify files exist in `public/` and paths in `data/index.ts`
----
-
-## 📦 Deployment
-Recommended: Vercel for zero-config Next.js deployments.
-- Connect GitHub repo → set env vars → deploy.
-- Optional: enable `@vercel/analytics` or use Vercel Insights.
-
----
-
-## 📝 License
-This repository **suggests** MIT. Add `LICENSE` if you want to open-source the code.
-
----
-
-## 📬 Contact
-- Email: `pathakharsh3601@gmail.com`
-- GitHub: `https://github.com/Harsh-Pathak3601`
-
----
-
-Made with ❤️ and code — keep iterating and ship what matters.
-
+<div align="center">
+  Made with ❤️ by Harsh Pathak
+</div>
