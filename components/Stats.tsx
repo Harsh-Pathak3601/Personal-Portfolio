@@ -31,35 +31,37 @@ const skills = [
 
 /*COMPONENTS*/
 const TerminalPreview = () => (
-  <div className="w-full h-28 bg-black/40 rounded-xl border border-white/10 p-3 font-mono text-[8px] flex flex-col gap-1 overflow-hidden pointer-events-none group-hover:border-purple-500/50 transition-colors">
-    <div className="flex items-center justify-between mb-1 relative">
+  <div className="w-full h-28 bg-[#04071d]/80 backdrop-blur-sm rounded-xl border border-white/10 p-3 font-mono text-[8px] flex flex-col gap-1 overflow-hidden pointer-events-none group-hover:border-purple-500/50 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-500 relative">
+    <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(147,51,234,0.05)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] z-10 opacity-30" />
+    <div className="flex items-center justify-between mb-1 relative z-20">
       <div className="flex gap-1 z-10">
-        <div className="w-1.5 h-1.5 rounded-full bg-red-500/50" />
-        <div className="w-1.5 h-1.5 rounded-full bg-yellow-500/50" />
-        <div className="w-1.5 h-1.5 rounded-full bg-green-500/50" />
+        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500/80 shadow-[0_0_5px_rgba(239,68,68,0.5)]" />
+        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-500/80 shadow-[0_0_5px_rgba(234,179,8,0.5)]" />
+        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500/80 shadow-[0_0_5px_rgba(34,197,94,0.5)]" />
       </div>
-      <span className="absolute left-1/2 -translate-x-1/2 text-[6px] tracking-[0.2em] text-white/20 uppercase font-bold italic whitespace-nowrap">
+      <span className="absolute left-1/2 -translate-x-1/2 text-[5px] sm:text-[6px] tracking-[0.2em] text-white/30 uppercase font-bold italic whitespace-nowrap drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]">
         HARSH_PERSONAL_TERMINAL
       </span>
     </div>
-    <div className="text-emerald-500/80 mt-1">➜ ~ access core_metrics</div>
-    <div className="text-white/40 italic">Initializing virtual environment...</div>
-    <div className="text-purple-400/70">Authenticated as: HARSH_PATHAK</div>
-    <div className="text-emerald-500/80 flex items-center gap-1">
-      <span>➜</span>
-      <span className="whitespace-nowrap">admin@harsh:~$</span>
-      <span className="w-1 h-2 bg-emerald-500/80 animate-pulse" />
+    <div className="text-emerald-400 mt-1 truncate z-20 drop-shadow-[0_0_5px_rgba(52,211,153,0.3)]">➜ ~ access core_metrics</div>
+    <div className="text-white/50 italic truncate z-20">Initializing virtual environment...</div>
+    <div className="text-purple-400/90 truncate z-20 drop-shadow-[0_0_5px_rgba(168,85,247,0.3)]">Authenticated as: HARSH_PATHAK</div>
+    <div className="text-emerald-400 flex items-center gap-1 mt-auto z-20">
+      <span className="shrink-0 drop-shadow-[0_0_5px_rgba(52,211,153,0.3)]">➜</span>
+      <span className="whitespace-nowrap shrink-0 opacity-80">admin@harsh:~$</span>
+      <span className="w-1.5 h-2.5 bg-emerald-400 animate-pulse shrink-0 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
     </div>
   </div>
 );
 
 const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [input, setInput] = useState("");
-  const [history, setHistory] = useState<any[]>([
+  const initialHistory = [
     { type: "sys", text: "HARSH_CORE_OS v4.0.2 - SECURE_BOOT_INIT..." },
     { type: "sys", text: "Establishing encrypted tunnel... DONE" },
     { type: "resp", text: "Interactive session started. Type 'help' for available commands or 'exit' to close." }
-  ]);
+  ];
+  const [history, setHistory] = useState<any[]>(initialHistory);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -81,14 +83,14 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
 
     let response: any = `ERR: Protocol '${cmd}' not recognized.`;
 
-    if (cmd === "help") response = "Commands: bio, skills, socials,resume, clear, exit";
+    if (cmd === "help") response = "Commands: bio, skills, socials, resume, clear, exit";
     if (cmd === "bio") response = "Harsh Pathak: Full Stack Engineer specializing in scalable web architectures.";
     if (cmd === "skills") response = "STACK: Next.js, Python, Docker, Java, TypeScript, MongoDB.";
 
     if (cmd === "resume") {
       response = (
-        <div className="mt-2 p-3">
-          <a href="/Harsh_Pathak_Resume.pdf" target="_blank" className="text-purple-400 font-bold hover:underline flex items-center gap-2">
+        <div className="mt-2 p-3 bg-purple-500/10 rounded-lg border border-purple-500/20 w-fit">
+          <a href="/Harsh_Pathak_Resume.pdf" target="_blank" className="text-purple-300 font-bold hover:text-purple-200 transition-colors flex items-center gap-2 text-sm sm:text-base break-words drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]">
             ➜ DOWNLOAD_Harsh_Pathak_Resume.pdf
           </a>
         </div>
@@ -98,69 +100,80 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     // Socials Links
     if (cmd === "socials") {
       response = (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
-          <a href="https://github.com/Harsh-Pathak3601" target="_blank" className="text-emerald-400 hover:text-purple-400 transition-colors">➜ GitHub: Harsh-Pathak3601</a>
-          <a href="https://linkedin.com/in/harsh-pathak-199503370/" target="_blank" className="text-emerald-400 hover:text-purple-400 transition-colors">➜ LinkedIn: /in/harsh-pathak-199503370</a>
-          <a href="https://instagram.com/harsh._.pathak1905" target="_blank" className="text-emerald-400 hover:text-purple-400 transition-colors">➜ Instagram: @harsh._.pathak1905</a>
-          <a href="mailto:pathakharsh3601@gmail.com" className="text-emerald-400 hover:text-purple-400 transition-colors">➜ Email: pathakharsh3601@gmail.com</a>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 mt-2 text-xs sm:text-sm md:text-base p-2">
+          <a href="https://github.com/Harsh-Pathak3601" target="_blank" className="text-emerald-400/90 hover:text-purple-300 transition-colors break-words hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]">➜ GitHub: Harsh-Pathak3601</a>
+          <a href="https://linkedin.com/in/harsh-pathak-199503370/" target="_blank" className="text-emerald-400/90 hover:text-purple-300 transition-colors break-words hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]">➜ LinkedIn: /in/harsh-pathak-199503370</a>
+          <a href="https://instagram.com/harsh._.pathak1905" target="_blank" className="text-emerald-400/90 hover:text-purple-300 transition-colors break-words hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]">➜ Instagram: @harsh._.pathak1905</a>
+          <a href="mailto:pathakharsh3601@gmail.com" className="text-emerald-400/90 hover:text-purple-300 transition-colors break-words hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]">➜ Email: pathakharsh3601@gmail.com</a>
         </div>
       );
     }
 
     if (cmd === "clear") {
-      setHistory([]);
+      setHistory(initialHistory);
     } else {
       setHistory(prev => [...prev, { type: "cmd", text: cmd }, { type: "resp", text: response }]);
     }
     setInput("");
   };
 
-
   return (
-    <div className="fixed inset-0 z-[9999] bg-[#0D0214] flex flex-col items-center justify-center p-4 md:p-10 font-mono text-white">
-      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(147,51,234,0.05)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] z-20 opacity-30" />
-      <div className="w-full max-w-6xl h-[85vh] bg-[#020617]/95 rounded-3xl border border-purple-500/30 flex flex-col shadow-[0_0_100px_rgba(168,85,247,0.15)] relative z-10 overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-white/5 relative">
-          <div className="flex gap-2 z-30">
-            <div className="w-3 h-3 rounded-full bg-red-500" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-            <div className="w-3 h-3 rounded-full bg-green-500" />
+    <div className="fixed inset-0 z-[9999] bg-[#0D0214]/60 backdrop-blur-sm flex flex-col items-center justify-center p-2 sm:p-4 md:p-10 font-mono text-white transition-opacity duration-300">
+      <div className="w-full max-w-6xl h-[90vh] sm:h-[85vh] bg-[#04071d]/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-purple-500/30 flex flex-col shadow-[0_0_60px_rgba(168,85,247,0.15)] relative z-10 overflow-hidden ring-1 ring-white/5">
+        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(147,51,234,0.05)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] z-20 opacity-40" />
+        
+        {/* Terminal Header */}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-500/20 bg-black/20 relative z-30">
+          <div className="flex gap-1.5 sm:gap-2 z-30">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 shadow-[0_0_8px_rgba(234,179,8,0.5)]" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80 shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
           </div>
-          <span className="absolute left-1/2 -translate-x-1/2 text-[10px] tracking-[0.5em] text-white/30 uppercase font-bold italic whitespace-nowrap">
+          <span className="absolute left-1/2 -translate-x-1/2 text-[8px] sm:text-[10px] tracking-widest sm:tracking-[0.5em] text-purple-300/40 uppercase font-bold italic whitespace-nowrap hidden sm:block drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]">
             HARSH_PERSONAL_TERMINAL
           </span>
-          <button onClick={onClose} className="text-[#C1C2D3] hover:text-white transition-colors relative z-30"><ImCancelCircle size={20} /></button>
+          <span className="absolute left-1/2 -translate-x-1/2 text-[10px] tracking-widest text-purple-300/40 uppercase font-bold italic whitespace-nowrap sm:hidden drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]">
+            TERMINAL
+          </span>
+          <button onClick={onClose} className="text-purple-400/50 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all relative z-30 p-1">
+            <ImCancelCircle size={18} className="sm:w-5 sm:h-5" />
+          </button>
         </div>
-        <div className="flex-1 p-6 md:p-10 overflow-hidden flex flex-col">
-          <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-3 text-sm md:text-base pr-4 custom-scrollbar">
+
+        {/* Terminal Body */}
+        <div className="flex-1 p-3 sm:p-6 md:p-10 overflow-hidden flex flex-col relative z-30 bg-gradient-to-b from-transparent to-purple-900/5">
+          <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-4 text-xs sm:text-sm md:text-base pr-2 sm:pr-4 custom-scrollbar break-words">
             {history.map((line, i) => (
-              <div key={i}>
+              <div key={i} className="animate-fade-in-up">
                 {line.type === "cmd" ? (
-                  <div className="flex items-center gap-2 text-emerald-500 font-bold">
-                    <span>➜</span>
-                    <span className="whitespace-nowrap">admin@harsh:~$</span>
-                    <span className="text-purple-400 uppercase">{line.text}</span>
+                  <div className="flex items-start sm:items-center gap-1 sm:gap-2 text-emerald-400 font-bold">
+                    <span className="mt-[2px] sm:mt-0 shrink-0 drop-shadow-[0_0_5px_rgba(52,211,153,0.3)]">➜</span>
+                    <span className="whitespace-nowrap mt-[2px] sm:mt-0 shrink-0 opacity-80">admin@harsh:~$</span>
+                    <span className="text-purple-300 uppercase break-all drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">{line.text}</span>
                   </div>
                 ) : (
-                  <div className={line.type === "sys" ? "text-blue-400/50 italic" : "text-emerald-400"}>
+                  <div className={line.type === "sys" ? "text-blue-300/60 italic break-words pl-2 sm:pl-3 border-l-2 border-blue-500/30 py-1" : "text-emerald-300/90 break-words pl-1 sm:pl-2"}>
                     {line.text}
                   </div>
                 )}
               </div>
             ))}
           </div>
-          <form onSubmit={handleCmd} className="mt-6 flex items-center gap-2 border-t border-white/5 pt-6">
-            <div className="flex items-center gap-2 text-emerald-500 font-bold text-xl">
+          
+          {/* Terminal Input */}
+          <form onSubmit={handleCmd} className="mt-4 sm:mt-6 flex items-center gap-2 border-t border-purple-500/20 pt-3 sm:pt-4 bg-black/20 rounded-xl px-3 sm:px-4 pb-3 sm:pb-4 shadow-inner">
+            <div className="flex items-center gap-1 sm:gap-2 text-emerald-400 font-bold text-sm sm:text-base md:text-xl shrink-0 drop-shadow-[0_0_5px_rgba(52,211,153,0.3)]">
               <span>➜</span>
-              <span className="whitespace-nowrap">admin@harsh:~$</span>
+              <span className="whitespace-nowrap opacity-80">admin@harsh:~$</span>
             </div>
             <input
               autoFocus
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="bg-transparent outline-none flex-1 text-white text-xl caret-purple-500"
+              className="bg-transparent outline-none flex-1 text-white text-sm sm:text-base md:text-xl caret-purple-500 min-w-0 placeholder-white/20"
               spellCheck={false}
               autoComplete="off"
+              placeholder="Type 'help' for commands..."
             />
           </form>
         </div>
@@ -278,9 +291,13 @@ export default function ActivityPage() {
 
       <style jsx>{`
         @keyframes scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-scroll { 
           animation: scroll 40s linear infinite; 
           will-change: transform;
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.3s ease-out forwards;
         }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.2); border-radius: 10px; }

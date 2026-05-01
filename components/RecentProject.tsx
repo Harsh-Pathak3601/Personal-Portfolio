@@ -73,18 +73,18 @@ const RecentProjects = () => {
         <div className="flex flex-wrap justify-center gap-2 mb-6 h-[64px] overflow-hidden">
           {item.iconLists.map((icon: string, i: number) => (
             <div key={i} className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 h-fit w-max">
-               <img src={icon} alt="tech" loading="lazy" className="w-3.5 h-3.5 opacity-80" />
-               <span className="text-[10px] font-medium text-primary uppercase tracking-wider">
-                 {item.techNames ? item.techNames[i] : "Tech"}
-               </span>
+              <img src={icon} alt="tech" loading="lazy" className="w-3.5 h-3.5 opacity-80" />
+              <span className="text-[10px] font-medium text-primary uppercase tracking-wider">
+                {item.techNames ? item.techNames[i] : "Tech"}
+              </span>
             </div>
           ))}
         </div>
 
         <div className="w-full flex items-center justify-between pt-4 border-t border-white/5">
           <div className="flex items-center gap-3 text-muted-foreground/60">
-             <div className="flex items-center gap-1 text-[11px]"><Star size={14} className="text-yellow-500/50" /> 0</div>
-             <div className="flex items-center gap-1 text-[11px]"><GitFork size={14} /> 0</div>
+            <div className="flex items-center gap-1 text-[11px]"><Star size={14} className="text-yellow-500/50" /> 0</div>
+            <div className="flex items-center gap-1 text-[11px]"><GitFork size={14} /> 0</div>
           </div>
           <div className="flex items-center gap-2">
             <Link href={item.github || "#"} target="_blank" className="p-2.5 rounded-full bg-white/5 text-white/40 hover:text-white transition-all border border-white/5">
@@ -100,14 +100,14 @@ const RecentProjects = () => {
   );
 
   return (
-    <section 
-      className="w-full py-20 relative min-h-screen flex flex-col items-center justify-start overflow-x-hidden" 
+    <section
+      className="w-full py-20 relative min-h-screen flex flex-col items-center justify-start overflow-x-hidden"
       id="projects"
       style={{ background: `radial-gradient(circle at 50% -10%, #1a0b2e 0%, #050505 60%, #000000 100%)` }}
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center mb-10">
         <h1 className="text-white mb-3 text-3xl md:text-5xl font-bold">
-          Selected <span className="text-primary">Projects</span>
+          Project <span className="text-primary">Vault</span>
         </h1>
         <p className="text-muted-foreground font-kaushan text-base md:text-lg max-w-xl">
           A showcase of my recent work and technical experiments.
@@ -126,11 +126,11 @@ const RecentProjects = () => {
       <div className="relative w-full max-w-7xl px-4 flex justify-center items-center flex-1">
         <AnimatePresence mode="wait">
           {viewMode === "stack" ? (
-            <motion.div 
-              key="stack" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              exit={{ opacity: 0 }} 
+            <motion.div
+              key="stack"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               className="relative w-full h-[600px] flex items-center justify-center"
             >
               <div className="absolute inset-0 hidden md:flex items-center justify-between z-50 pointer-events-none md:px-10 lg:px-20">
@@ -143,57 +143,57 @@ const RecentProjects = () => {
               </div>
 
               <div className="relative w-full flex flex-col items-center justify-center perspective-1000">
-                <div 
-                   className="relative w-full flex items-center justify-center h-[520px]"
-                   onTouchStart={handleTouchStart}
-                   onTouchEnd={handleTouchEnd}
+                <div
+                  className="relative w-full flex items-center justify-center h-[520px]"
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
                 >
-                    {projects.map((item, index) => {
-                      const isCenter = index === currentIndex;
-                      const isNext = index === (currentIndex + 1) % projects.length;
-                      const isPrev = index === (currentIndex - 1 + projects.length) % projects.length;
-                      
-                      if (!isCenter && !isNext && !isPrev) return null;
+                  {projects.map((item, index) => {
+                    const isCenter = index === currentIndex;
+                    const isNext = index === (currentIndex + 1) % projects.length;
+                    const isPrev = index === (currentIndex - 1 + projects.length) % projects.length;
 
-                      // Standard CSS transition classes without physics engine drag
-                      // Transform definitions matching the original intent but purely CSS-driven
-                      let transformStyle = '';
-                      let opacityStyle = 0;
-                      let zIndexStyle = 10;
+                    if (!isCenter && !isNext && !isPrev) return null;
 
-                      if (isCenter) {
-                         transformStyle = 'translateX(0px) scale(1) rotateY(0deg)';
-                         opacityStyle = 1;
-                         zIndexStyle = 30;
-                      } else if (isNext) {
-                         transformStyle = 'translateX(120px) scale(0.85) rotateY(-10deg)';
-                         opacityStyle = 0.4;
-                         zIndexStyle = 10;
-                      } else if (isPrev) {
-                         transformStyle = 'translateX(-120px) scale(0.85) rotateY(10deg)';
-                         opacityStyle = 0.4;
-                         zIndexStyle = 10;
-                      }
+                    // Standard CSS transition classes without physics engine drag
+                    // Transform definitions matching the original intent but purely CSS-driven
+                    let transformStyle = '';
+                    let opacityStyle = 0;
+                    let zIndexStyle = 10;
 
-                      return (
-                        <div
-                          key={item.id}
-                          className={`absolute w-full max-w-[400px] transition-all duration-500 ease-out ${isCenter ? 'cursor-grab active:cursor-grabbing hover:scale-[1.02]' : 'cursor-pointer'}`}
-                          onClick={() => {
-                              if (isNext) handleNext();
-                              else if (isPrev) handlePrev();
-                          }}
-                          style={{
-                            transform: transformStyle,
-                            opacity: opacityStyle,
-                            zIndex: zIndexStyle,
-                            willChange: "transform, opacity"
-                          }}
-                        >
-                          <ProjectCard item={item} />
-                        </div>
-                      );
-                    })}
+                    if (isCenter) {
+                      transformStyle = 'translateX(0px) scale(1) rotateY(0deg)';
+                      opacityStyle = 1;
+                      zIndexStyle = 30;
+                    } else if (isNext) {
+                      transformStyle = 'translateX(120px) scale(0.85) rotateY(-10deg)';
+                      opacityStyle = 0.4;
+                      zIndexStyle = 10;
+                    } else if (isPrev) {
+                      transformStyle = 'translateX(-120px) scale(0.85) rotateY(10deg)';
+                      opacityStyle = 0.4;
+                      zIndexStyle = 10;
+                    }
+
+                    return (
+                      <div
+                        key={item.id}
+                        className={`absolute w-full max-w-[400px] transition-all duration-500 ease-out ${isCenter ? 'cursor-grab active:cursor-grabbing hover:scale-[1.02]' : 'cursor-pointer'}`}
+                        onClick={() => {
+                          if (isNext) handleNext();
+                          else if (isPrev) handlePrev();
+                        }}
+                        style={{
+                          transform: transformStyle,
+                          opacity: opacityStyle,
+                          zIndex: zIndexStyle,
+                          willChange: "transform, opacity"
+                        }}
+                      >
+                        <ProjectCard item={item} />
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="flex gap-2.5 items-center justify-center mt-8">
@@ -201,16 +201,14 @@ const RecentProjects = () => {
                     <button
                       key={idx}
                       onClick={() => setCurrentIndex(idx)}
-                      className={`group relative flex items-center justify-center transition-all duration-500 ${
-                        currentIndex === idx ? "w-10" : "w-3"
-                      }`}
+                      className={`group relative flex items-center justify-center transition-all duration-500 ${currentIndex === idx ? "w-10" : "w-3"
+                        }`}
                     >
-                      <div 
-                        className={`h-2 rounded-full transition-all duration-500 ${
-                          currentIndex === idx 
-                            ? "w-full bg-primary shadow-[0_0_15px_rgba(168,85,247,0.6)]" 
+                      <div
+                        className={`h-2 rounded-full transition-all duration-500 ${currentIndex === idx
+                            ? "w-full bg-primary shadow-[0_0_15px_rgba(168,85,247,0.6)]"
                             : "bg-white/20 w-full group-hover:bg-white/40"
-                        }`} 
+                          }`}
                       />
                     </button>
                   ))}
@@ -218,10 +216,10 @@ const RecentProjects = () => {
               </div>
             </motion.div>
           ) : (
-            <motion.div 
-              key="grid" 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              key="grid"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 w-full max-w-5xl py-10 mx-auto"
             >
               {projects.map((item) => (
