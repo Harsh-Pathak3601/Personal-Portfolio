@@ -39,7 +39,6 @@ A high-performance, single-page portfolio built on the **Obsidian Purple** desig
 | **Animation** | Framer Motion (Spring Physics, AnimatePresence, useVelocity) |
 | **Typography** | Google Fonts — Inter, Kaushan Script, Dancing Script, Gloria Hallelujah, Satisfy |
 | **Icons** | Lucide React · React Icons · Heroicons |
-| **Contact** | EmailJS (@emailjs/browser) |
 | **Analytics** | Vercel Analytics |
 | **Theme** | next-themes (Dark/Light with system detection) |
 
