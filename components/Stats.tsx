@@ -121,7 +121,7 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     <div className="fixed inset-0 z-[9999] bg-[#0D0214]/60 backdrop-blur-sm flex flex-col items-center justify-center p-2 sm:p-4 md:p-10 font-mono text-white transition-opacity duration-300">
       <div className="w-full max-w-6xl h-[90vh] sm:h-[85vh] bg-[#04071d]/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-purple-500/30 flex flex-col shadow-[0_0_60px_rgba(168,85,247,0.15)] relative z-10 overflow-hidden ring-1 ring-white/5">
         <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(147,51,234,0.05)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] z-20 opacity-40" />
-        
+
         {/* Terminal Header */}
         <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-500/20 bg-black/20 relative z-30">
           <div className="flex gap-1.5 sm:gap-2 z-30">
@@ -159,7 +159,7 @@ const TerminalModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
               </div>
             ))}
           </div>
-          
+
           {/* Terminal Input */}
           <form onSubmit={handleCmd} className="mt-4 sm:mt-6 flex items-center gap-2 border-t border-purple-500/20 pt-3 sm:pt-4 bg-black/20 rounded-xl px-3 sm:px-4 pb-3 sm:pb-4 shadow-inner">
             <div className="flex items-center gap-1 sm:gap-2 text-emerald-400 font-bold text-sm sm:text-base md:text-xl shrink-0 drop-shadow-[0_0_5px_rgba(52,211,153,0.3)]">

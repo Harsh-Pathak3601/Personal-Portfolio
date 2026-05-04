@@ -23,17 +23,17 @@ export const CustomCursor = () => {
   // Mathematical liquid mapping: when moving fast on an X-axis, the blob stretches horizontally and compresses vertically
   const scaleXBase = useTransform(velocityX, [-2500, 0, 2500], [2, 1, 2]);
   const scaleYBase = useTransform(velocityY, [-2500, 0, 2500], [2, 1, 2]);
-  const shrinkXBase = useTransform(velocityY, [-2500, 0, 2500], [0.6, 1, 0.6]); 
+  const shrinkXBase = useTransform(velocityY, [-2500, 0, 2500], [0.6, 1, 0.6]);
   const shrinkYBase = useTransform(velocityX, [-2500, 0, 2500], [0.6, 1, 0.6]);
 
   // We combine the stretch and shrink using an inline functional template calculation
   const compositeScaleX = useTransform(
-    [scaleXBase, shrinkXBase], 
+    [scaleXBase, shrinkXBase],
     ([stretch, compress]) => (stretch as number) * (compress as number)
   );
-  
+
   const compositeScaleY = useTransform(
-    [scaleYBase, shrinkYBase], 
+    [scaleYBase, shrinkYBase],
     ([stretch, compress]) => (stretch as number) * (compress as number)
   );
 
@@ -53,7 +53,7 @@ export const CustomCursor = () => {
         window.getComputedStyle(target).cursor === "pointer" ||
         target.tagName.toLowerCase() === "a" ||
         target.tagName.toLowerCase() === "button" ||
-        target.closest("a") || 
+        target.closest("a") ||
         target.closest("button")
       ) {
         setIsHovering(true);
@@ -87,19 +87,18 @@ export const CustomCursor = () => {
           scaleX: isHovering ? 2.5 : compositeScaleX,
           scaleY: isHovering ? 2.5 : compositeScaleY,
         }}
-        animate={{ 
-            rotate: isHovering ? 45 : 0 // Turns into a diamond when hovering interactive items
+        animate={{
+          rotate: isHovering ? 45 : 0 // Turns into a diamond when hovering interactive items
         }}
         transition={{ duration: 0.3 }}
       >
-          {/* Core Velocity Body */}
-          <div 
-            className={`w-full h-full bg-primary shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300 ${
-                isHovering ? "rounded-[5px] opacity-70 border-[2px] border-white" : "rounded-full opacity-100"
+        {/* Core Velocity Body */}
+        <div
+          className={`w-full h-full bg-primary shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300 ${isHovering ? "rounded-[5px] opacity-70 border-[2px] border-white" : "rounded-full opacity-100"
             }`}
-          />
+        />
       </motion.div>
-      
+
       {/* Precision Anchor Dot (Doesn't Stretch, gives user exact clicking location) */}
       <motion.div
         className="fixed top-0 left-0 w-1.5 h-1.5 bg-white rounded-full pointer-events-none z-[10001]"

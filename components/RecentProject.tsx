@@ -206,8 +206,8 @@ const RecentProjects = () => {
                     >
                       <div
                         className={`h-2 rounded-full transition-all duration-500 ${currentIndex === idx
-                            ? "w-full bg-primary shadow-[0_0_15px_rgba(168,85,247,0.6)]"
-                            : "bg-white/20 w-full group-hover:bg-white/40"
+                          ? "w-full bg-primary shadow-[0_0_15px_rgba(168,85,247,0.6)]"
+                          : "bg-white/20 w-full group-hover:bg-white/40"
                           }`}
                       />
                     </button>

@@ -9,9 +9,9 @@ import Typewriter from 'typewriter-effect'
 
 const Hero = () => {
   return (
-   
-   <section id='Home' className="relative w-full min-h-screen overflow-hidden pt-32 bg-mesh-purple">
-      
+
+    <section id='Home' className="relative w-full min-h-screen overflow-hidden pt-32 bg-mesh-purple">
+
       {/* Spotlights - Integrated with Obsidian Purple Theme */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <Spotlight
@@ -28,15 +28,15 @@ const Hero = () => {
         />
       </div>
 
-     <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex min-h-[75vh] flex-col md:flex-row items-center justify-between gap-16">
 
-      
+
           <div className="flex-1">
             <div className="flex justify-center">
               <div className="max-w-xl">
 
-                
+
                 <TextGenerateEffect
                   className="
                     text-center
@@ -46,7 +46,7 @@ const Hero = () => {
                   "
                   words="Building Creativity with Scalable Technology" />
 
-                
+
                 <h2 className="mt-2 h-[28px] sm:h-[32px] text-sm sm:text-xl font-kaushan flex items-center justify-center mb-4 whitespace-nowrap">
                   Hi👋, I'm Harsh — A
                   <span className="text-purple font-bold pl-2">
@@ -66,33 +66,33 @@ const Hero = () => {
                   </span>
                 </h2>
                 <p className="text-center text-white/70 text-sm sm:text-base md:text-lg mb-8 max-w-xl leading-relaxed">
-                 Building scalable, high-performance web applications with clean backend logic and intuitive UIs.
+                  Building scalable, high-performance web applications with clean backend logic and intuitive UIs.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
-  
-  <a href="#projects" className="flex justify-center sm:w-[200px]">
-    <MagicButton
-      title="Show my work"
-      icon={<FaLocationArrow />}
-      position="right"
-    />
-  </a>
 
-  <a
-    href="/Harsh_Pathak_Resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex justify-center sm:w-[200px]"
-  >
-    <MagicButton
-      title="View Resume"
-      icon={<FaFilePdf className="text-lg" />}
-      position="left"
-      otherClasses="border border-white-100/10 !bg-black-200"
-    />
-  </a>
+                  <a href="#projects" className="flex justify-center sm:w-[200px]">
+                    <MagicButton
+                      title="Show my work"
+                      icon={<FaLocationArrow />}
+                      position="right"
+                    />
+                  </a>
 
-</div>
+                  <a
+                    href="/Harsh_Pathak_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center sm:w-[200px]"
+                  >
+                    <MagicButton
+                      title="View Resume"
+                      icon={<FaFilePdf className="text-lg" />}
+                      position="left"
+                      otherClasses="border border-white-100/10 !bg-black-200"
+                    />
+                  </a>
+
+                </div>
 
 
               </div>
@@ -104,7 +104,7 @@ const Hero = () => {
             <div className="relative group">
               {/* Dynamic halo that glows purple on hover */}
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-[60px]  group-hover:bg-primary/40 transition-all duration-700" />
-              
+
               <img
                 src="/harsh.jpeg"
                 alt="Harsh"

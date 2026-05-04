@@ -72,20 +72,20 @@ export const projects = [
     title: "Starknet AI",
     des: "Built an autonomous CLI-based multi agent AI system that simulates the full SDLC with slef-correcting code generation.",
     img: "/Stark.png",
-    iconLists: ["/node.png", "/tail.svg", "/playwright.png", "/groq.png",],
+    iconLists: ["/nodejs.svg", "/tail.svg", "/playwright.svg", "/groq.svg",],
     techNames: ["Node.js", "Tailwind", "Playwright", "groq"],
     link: "https://github.com/Harsh-Pathak3601/Starknet-AI",
     github: "https://github.com/Harsh-Pathak3601/Starknet-AI",
   },
   {
     id: 3,
-    title: "Idaten Jump",
-    des: "A high-energy project highlighting speed and dynamic UI interactions using cutting-edge frontend tools.",
-    img: "/idatenjump.webp",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    techNames: ["React", "Tailwind", "TypeScript", "Three.js", "Cloudinary"],
-    link: "https://ui.Idaten-Jump.com",
-    github: "https://github.com/Harsh-Pathak3601/Idaten-Jump",
+    title: "PayPulse-Employee Payroll Management System",
+    des: "PayPulse is a full-stack enterprise payroll system that streamlines employee management, attendance tracking, and automated salary computation with built-in tax compliance.",
+    img: "./payroll.png",
+    iconLists: ["/java.svg", "/jsp.svg", "/mysql.svg", "/apache.svg"],
+    techNames: ["Java", "JSP", "MySQL", "Apache Tomcat"],
+    link: "https://paypulse-pm84.onrender.com/",
+    github: "https://github.com/Harsh-Pathak3601/PayPulse",
   },
   {
     id: 4,
@@ -209,14 +209,4 @@ export const socialMedia = [
     id: 3,
     img: "/link.svg",
   },
-];
-
-export const devQuotes = [
-  "Code is poetry written for machines, read by humans.",
-  "First make it work, then make it right, then make it fast.",
-  "A bug is just a feature waiting for documentation.",
-  "Programming is thinking, not typing.",
-  "Clean code always looks like it was written by someone who cares.",
-  "Simplicity is the soul of efficient code.",
-  "Your future self is your most important user."
 ];
