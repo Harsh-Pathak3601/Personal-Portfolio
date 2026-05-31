@@ -12,7 +12,7 @@ const Hero = () => {
 
     <section id='Home' className="relative w-full min-h-screen overflow-hidden pt-32 bg-mesh-purple">
 
-      {/* Spotlights - Integrated with Obsidian Purple Theme */}
+     
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -99,10 +99,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT — IMAGE with Dynamic Obsidian Glow */}
           <div className="flex-1 flex justify-center md:justify-end">
             <div className="relative group">
-              {/* Dynamic halo that glows purple on hover */}
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-[60px]  group-hover:bg-primary/40 transition-all duration-700" />
 
               <img

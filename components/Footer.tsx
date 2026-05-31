@@ -15,9 +15,6 @@ const Footer = () => {
   ];
 
   return (
-    /* 1. FULL-WIDTH SHELL: 
-       'w-full' and 'bg-background' ensure the obsidian purple spans the whole screen.
-    */
     <footer className="w-full py-14 mt-20 relative overflow-hidden bg-background">
       
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />

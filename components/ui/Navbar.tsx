@@ -46,8 +46,8 @@ export const Navbar = ({
       >
         {/* Logo Section */}
         <div className="flex w-full md:w-auto items-center justify-between px-2">
-          <Link 
-            href="#Home" 
+          <Link
+            href="#Home"
             onClick={() => setActive("Home")}
             className="group flex items-center gap-3 md:mr-6 outline-none"
           >
@@ -104,7 +104,7 @@ export const Navbar = ({
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href={item.link.toLowerCase()} 
+              href={item.link.toLowerCase()}
               onClick={() => setActive(item.name)}
               className="relative px-5 py-2 text-xs font-bold uppercase tracking-widest transition-colors text-foreground/60 hover:text-primary"
             >
@@ -157,7 +157,7 @@ export const Navbar = ({
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Mobile Resume Button */}
               <Link
                 href="/Harsh_Pathak_Resume.pdf"

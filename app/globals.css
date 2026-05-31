@@ -13,7 +13,6 @@ body {
 
 @layer base {
   :root {
-    /* Sophisticated Light Mode - Slate with a hint of Violet */
     --background: 260 30% 99%;
     --foreground: 260 50% 3%;
 
@@ -47,8 +46,6 @@ body {
   }
 
   .dark {
-    /* The "Better than Piyush" Secret: Obsidian Purple Background */
-    /* Lightness at 2% makes it deep, but Hue at 265 adds the premium purple tint */
     --background: 265 45% 2%;
     --foreground: 270 15% 98%;
 
@@ -106,17 +103,17 @@ body {
     @apply font-bold text-4xl md:text-5xl lg:text-6xl text-center tracking-tight leading-tight;
   }
 
-  /* Improved Gradient: Smoother transition than the reference */
+  
   .black-gradient {
     background: linear-gradient(135deg, #080112 0%, #03000a 100%);
   }
 
-  /* Glassmorphism utility for cards */
+ 
   .glass-card {
     @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] shadow-2xl;
   }
 
-  /* Neon Glow effect */
+ 
   .purple-glow {
     box-shadow: 0 0 40px -10px hsla(272, 90%, 65%, 0.3);
   }

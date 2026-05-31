@@ -154,9 +154,6 @@ const RecentProjects = () => {
                     const isPrev = index === (currentIndex - 1 + projects.length) % projects.length;
 
                     if (!isCenter && !isNext && !isPrev) return null;
-
-                    // Standard CSS transition classes without physics engine drag
-                    // Transform definitions matching the original intent but purely CSS-driven
                     let transformStyle = '';
                     let opacityStyle = 0;
                     let zIndexStyle = 10;
