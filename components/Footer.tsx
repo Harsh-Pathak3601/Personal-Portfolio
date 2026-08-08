@@ -11,11 +11,11 @@ const Footer = () => {
     { name: "Home", href: "#Home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "#contact"  },
   ];
 
   return (
-    <footer className="w-full py-14 mt-20 relative overflow-hidden bg-background">
+    <footer className="w-full py-14 mt-20 relative  overflow-hidden bg-background">
       
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
@@ -69,7 +69,7 @@ const Footer = () => {
               </div>
             </Link>
             
-            <p className="text-sm italic text-muted-foreground font-kaushan tracking-wide max-w-[250px] text-center md:text-left">
+            <p className="text-sm italic text-muted-foreground font-serif tracking-wide max-w-[250px] text-center md:text-left">
                Turning lines of code into <span className="text-primary/80">exceptional</span> digital experiences.
             </p>
           </div>
@@ -111,13 +111,13 @@ const Footer = () => {
 
         {/* Copyright Bar & Location */}
         <div className="mt-14 pt-8 border-t border-border flex flex-col items-center gap-3">
-          <p className="text-sm tracking-tight font-bold text-foreground text-center whitespace-nowrap">
+          <p className="text-sm font-serif tracking-tight font-bold text-foreground text-center whitespace-nowrap">
             © {currentYear} Portfolio. Made with ❤️ by <span className="text-primary">Harsh Pathak</span>
           </p>
           
           <div className="flex items-center gap-2 opacity-40 group hover:opacity-100 transition-opacity">
             <span className="h-[1px] w-4 bg-primary" />
-            <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-foreground whitespace-nowrap">
+            <p className="text-[10px] font-serif uppercase tracking-[0.4em] font-bold text-foreground whitespace-nowrap">
               Mumbai • Maharashtra • India
             </p>
             <span className="h-[1px] w-4 bg-primary" />

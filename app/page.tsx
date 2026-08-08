@@ -32,7 +32,7 @@ const Home = () => {
       {!isLoading && (
         <div className="w-full flex flex-col items-center">
           <Analytics />
-          <Navbar navItems={navItems} />
+          <Navbar navItems={navItems} className="font-serif"/>
           <Hero />
           <Stats />
           <RecentProject />

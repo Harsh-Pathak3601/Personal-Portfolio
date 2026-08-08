@@ -225,7 +225,7 @@ export default function ActivityPage() {
 
       <div className="mx-auto max-w-[1300px] relative z-10">
         <header className="mb-16 flex flex-col items-center text-center">
-          <h1 className="heading text-foreground">
+          <h1 className="heading text-foreground font-serif">
             Engineering <span className="text-primary">Snapshot</span>
           </h1>
           <p className="mt-3 text-sm sm:text-base md:text-lg lg:text-xl md:tracking-wider text-muted-foreground font-kaushan max-w-2xl mx-auto italic opacity-80">

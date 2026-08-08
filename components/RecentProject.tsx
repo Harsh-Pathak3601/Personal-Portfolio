@@ -106,7 +106,7 @@ const RecentProjects = () => {
       style={{ background: `radial-gradient(circle at 50% -10%, #1a0b2e 0%, #050505 60%, #000000 100%)` }}
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center mb-10">
-        <h1 className="text-white mb-3 text-3xl md:text-5xl font-bold">
+        <h1 className="text-white mb-3 font-serif text-3xl md:text-5xl font-bold">
           Project <span className="text-primary">Vault</span>
         </h1>
         <p className="text-muted-foreground font-kaushan text-base md:text-lg max-w-xl">

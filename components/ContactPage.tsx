@@ -73,7 +73,7 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10 flex flex-col items-center">
         
         <div className="mb-12 text-center px-4">
-          <h1 className="heading text-foreground">
+          <h1 className="heading font-serif text-foreground">
             Let's <span className="text-primary">Connect</span>
           </h1>
 
