@@ -275,6 +275,21 @@ export default function ActivityPage() {
                     blockSize={11}
                     blockMargin={4}
                     theme={purpleTheme}
+                    tooltips={{
+                      activity: {
+                        text: (activity: { date: string; count: number }) => {
+                          const contributions = activity.count;
+                          const verb = contributions === 1 ? 'contribution' : 'contributions';
+                          const date = new Date(activity.date).toLocaleDateString(undefined, {
+                            weekday: 'short',
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                          });
+                          return `${contributions} ${verb} on ${date}`;
+                        }
+                      }
+                    }}
                   />
                 </div>
               ) : (

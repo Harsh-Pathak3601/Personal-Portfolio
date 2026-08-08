@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Dancing_Script, Kaushan_Script, Gloria_Hallelujah, Satisfy} from "next/font/google";
+import { Inter, Dancing_Script, Kaushan_Script, Gloria_Hallelujah, Satisfy, Instrument_Serif} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import { Variable } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,6 +12,13 @@ const dancingScript = Dancing_Script({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-dancing",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-serif",
+
 });
 
 const kaushanScript = Kaushan_Script({
